@@ -1,0 +1,4 @@
+res://scenes/ui/main_menu/main_menu.tscn
+res://scenes/ui/main_menu/main_menu.gd
+res://gdshader/main_menu.gdshader
+res://gdshader/background.gdshader
