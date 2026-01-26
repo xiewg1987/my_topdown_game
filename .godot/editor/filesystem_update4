@@ -2,3 +2,8 @@ res://scenes/ui/main_menu/main_menu.tscn
 res://scenes/ui/main_menu/main_menu.gd
 res://gdshader/main_menu.gdshader
 res://gdshader/background.gdshader
+res://extra/font_16.tres
+res://language/language.csv
+res://language/text.en.translation
+res://language/text.zh.translation
+res://theme/base_theme.tres

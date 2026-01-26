@@ -22,6 +22,10 @@ window/size/window_width_override=1344
 window/size/window_height_override=756
 window/stretch/mode="canvas_items"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://language/text.en.translation", "res://language/text.zh.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://chlihqwmkqhx7"]
+[gd_scene load_steps=9 format=3 uid="uid://chlihqwmkqhx7"]
 
 [ext_resource type="Script" uid="uid://nc3hg4wkpqxa" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1ch07"]
 [ext_resource type="Shader" uid="uid://cpkigu5f3e85r" path="res://gdshader/background.gdshader" id="2_cmwxi"]
 [ext_resource type="Texture2D" uid="uid://bjnh3sonwurje" path="res://assets/sprites/background_tiled.png" id="2_e8t4i"]
-[ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://extra/font_48.tres" id="4_cmwxi"]
+[ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://extra/font/font_48.tres" id="4_cmwxi"]
+[ext_resource type="Texture2D" uid="uid://mbbv30uewh26" path="res://theme/TextureButton/reddish_orange.tres" id="5_8ouhi"]
+[ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://extra/font/font_16.tres" id="6_52x6y"]
+[ext_resource type="Texture2D" uid="uid://y8gtjg07mii3" path="res://theme/TextureButton/graphite.tres" id="7_8ouhi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r70wa"]
 shader = ExtResource("2_cmwxi")
@@ -44,3 +47,293 @@ text = "TOPDOWN
 GAME"
 label_settings = ExtResource("4_cmwxi")
 horizontal_alignment = 1
+
+[node name="MainButtons" type="Control" parent="."]
+custom_minimum_size = Vector2(350, 220)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -232.0
+offset_right = 175.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainButtons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Paly" type="Control" parent="MainButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="PlayButton" type="TextureButton" parent="MainButtons/VBoxContainer/Paly"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainButtons/VBoxContainer/Paly/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_Play"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Control" parent="MainButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="SettingsButton" type="TextureButton" parent="MainButtons/VBoxContainer/Settings"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainButtons/VBoxContainer/Settings/SettingsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_SETTINGS"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Control" parent="MainButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="QuitButton" type="TextureButton" parent="MainButtons/VBoxContainer/Quit"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainButtons/VBoxContainer/Quit/QuitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_QUIT"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButtons" type="Control" parent="."]
+custom_minimum_size = Vector2(350, 220)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -236.0
+offset_right = 364.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsButtons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Music" type="Control" parent="SettingsButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="MusicButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/Music"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SettingsButtons/VBoxContainer/Music/MusicButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_MUSIC"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="Control" parent="SettingsButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="SFXButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SettingsButtons/VBoxContainer/SFX/SFXButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_SFX"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Window" type="Control" parent="SettingsButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="WindowButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/Window"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SettingsButtons/VBoxContainer/Window/WindowButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_WINDOW"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Control" parent="SettingsButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="SettingsButtons/VBoxContainer/Back"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_8ouhi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SettingsButtons/VBoxContainer/Back/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEY_BACK"
+label_settings = ExtResource("6_52x6y")
+horizontal_alignment = 1
+vertical_alignment = 1

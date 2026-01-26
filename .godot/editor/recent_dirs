@@ -1,3 +1,6 @@
+res://scenes/ui/main_menu
+res://theme/TextureButton
+res://theme
+res://language
 res://extra
 res://gdshader
-res://scenes/ui/main_menu
