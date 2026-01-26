@@ -1,5 +1,8 @@
-TextureButton
-Label
 Control
+Label
+ColorRect
+CanvasLayer
+Node
+TextureButton
 VBoxContainer
 TextureRect

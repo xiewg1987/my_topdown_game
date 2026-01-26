@@ -7,3 +7,8 @@ res://language/language.csv
 res://language/text.en.translation
 res://language/text.zh.translation
 res://theme/base_theme.tres
+res://autoloads/transition/transition.tscn
+res://theme/TextureButton/reddish_orange.tres
+res://autoloads/transition/transition.gd
+res://theme/gdshader/transition.gdshader
+res://scenes_test/test_scens_transition/test_scens_transition.tscn

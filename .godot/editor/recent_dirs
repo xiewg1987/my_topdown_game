@@ -1,6 +1,7 @@
+res://scenes_test/test_scens_transition
+res://theme/gdshader
+res://autoloads/transition
 res://scenes/ui/main_menu
 res://theme/TextureButton
 res://theme
 res://language
-res://extra
-res://gdshader

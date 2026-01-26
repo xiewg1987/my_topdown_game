@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://chlihqwmkqhx7"]
 
 [ext_resource type="Script" uid="uid://nc3hg4wkpqxa" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1ch07"]
-[ext_resource type="Shader" uid="uid://cpkigu5f3e85r" path="res://gdshader/background.gdshader" id="2_cmwxi"]
+[ext_resource type="Shader" uid="uid://cpkigu5f3e85r" path="res://theme/gdshader/background.gdshader" id="2_cmwxi"]
 [ext_resource type="Texture2D" uid="uid://bjnh3sonwurje" path="res://assets/sprites/background_tiled.png" id="2_e8t4i"]
-[ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://extra/font/font_48.tres" id="4_cmwxi"]
+[ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://theme/extra/font/font_48.tres" id="4_cmwxi"]
 [ext_resource type="Texture2D" uid="uid://mbbv30uewh26" path="res://theme/TextureButton/reddish_orange.tres" id="5_8ouhi"]
-[ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://extra/font/font_16.tres" id="6_52x6y"]
+[ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://theme/extra/font/font_16.tres" id="6_52x6y"]
 [ext_resource type="Texture2D" uid="uid://y8gtjg07mii3" path="res://theme/TextureButton/graphite.tres" id="7_8ouhi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r70wa"]

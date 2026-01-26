@@ -25,10 +25,15 @@ func _ready() -> void:
 	TranslationServer.set_locale("zh")
 	main_buttons_position = main_buttons.position
 	settings_buttons_position_x = settings_buttons.position.x
+	## 连接开始游戏信号
+	play_button.pressed.connect(_on_play_button_pressed)
 	## 连接设置按钮按下信号
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	## 连接设置按钮组返回信号
 	back_button.pressed.connect(_on_back_button_pressed)
+
+func _on_play_button_pressed() -> void:
+	Transition.transition_to("res://scenes_test/test_scens_transition/test_scens_transition.tscn")
 
 
 func _on_settings_button_pressed() -> void:
