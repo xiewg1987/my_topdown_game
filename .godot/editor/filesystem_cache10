@@ -1,13 +1,13 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1769416528
+::res://::1769480963
 icon.svg::CompressedTexture2D::399647507862200059::1769399855::1769399866::1::::<><><>0<>0<>ee299e097238c3d3cb0753e49c51bcfd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1769400049
 ::res://assets/font/::1769400083
 Comicoro.ttf::FontFile::5983426668108525059::1769400048::1769400083::1::::<><><>0<>0<>caf3c1385b1053b678fe81ddbc855334<>res://.godot/imported/Comicoro.ttf-8144dcf4bf493c3ba830916ab82db48b.fontdata::
 font_game.png::FontFile::6830074796940968156::1769400048::1769400083::1::::<><><>0<>0<>61fe80f479c8f6a54dab6299fdaad4c0<>res://.godot/imported/font_game.png-2dae75b35236ee876f9f7e53f637131b.fontdata::
 Lilian.ttf::FontFile::5636009763640670323::1769400048::1769400051::1::::<><><>0<>0<>45eb267da6fddebd65042ccc177416e8<>res://.godot/imported/Lilian.ttf-2dd003e025e7444f81d1c23ba8182f67.fontdata::
-::res://assets/sounds/::1769416430
-Bg Music.mp3::AudioStreamMP3::8640269941490428004::1769400048::1769400083::1::::<><><>0<>0<>4e231113e910bc86d985dc3a2f33351c<>res://.godot/imported/Bg Music.mp3-971366e8b57b7b52579941cc06f39508.mp3str::
+::res://assets/sounds/::1769480098
+Bg Music.mp3::AudioStreamMP3::8640269941490428004::1769400048::1769480966::1::::<><><>0<>0<>8c00d8c1c6d763f84ed3de1a7c43923f<>res://.godot/imported/Bg Music.mp3-971366e8b57b7b52579941cc06f39508.mp3str::
 button_hover.wav::AudioStreamWAV::7982270706055900154::1769400048::1769400083::1::::<><><>0<>0<>170243bf4b055876402396ca178ff6f4<>res://.godot/imported/button_hover.wav-b983fda0233c298d3e1bdb0742d51044.sample::
 button_select.wav::AudioStreamWAV::7146540352321038017::1769400048::1769400083::1::::<><><>0<>0<>af5e9953a7588bf5d919146db9859e7e<>res://.godot/imported/button_select.wav-cd31e7dc38950fffc148ddfbd181026d.sample::
 chest.ogg::AudioStreamOggVorbis::5663380010761361361::1769400049::1769400083::1::::<><><>0<>0<>929082b5ad7b476f4a5e8e0c615db78e<>res://.godot/imported/chest.ogg-a2a1b2f85bdad454c9cee55d45c50bfb.oggvorbisstr::
@@ -168,24 +168,27 @@ tile_0031.png::CompressedTexture2D::1902961853445686738::1769400051::1769400083:
 tile_0032.png::CompressedTexture2D::1586998771030148131::1769400051::1769400083::1::::<><><>0<>0<>f8eb5255df5fbf1b72ab2cff5a2e7d50<>res://.godot/imported/tile_0032.png-d070bb55784b4fd168ef1776a853375b.ctex::
 weapon_pistol.png::CompressedTexture2D::7159197246035615617::1769400051::1769400083::1::::<><><>0<>0<>4bafb28d737d07699f4a2e10d4a5da69<>res://.godot/imported/weapon_pistol.png-cf14754d874ad1e5bda013d197f2c303.ctex::
 ::res://autoloads/::1769415917
-::res://autoloads/audio_player/::1769416550
+::res://autoloads/audio_player/::1769418743
 audio_player.gd::GDScript::6574201614864842028::1769414560::0::1::::<>Node<><>0<>0<><>::
-music_player.tscn::PackedScene::4726562141696954656::1769414648::0::1::::<><><>0<>0<><>::uid://c0wue07it5qci::::res://autoloads/audio_player/audio_player.gd
+music_player.tscn::PackedScene::4726562141696954656::1769418743::0::1::::<><><>0<>0<><>::uid://c0wue07it5qci::::res://autoloads/audio_player/audio_player.gd
 sfx_player.tscn::PackedScene::4878743667901497995::1769416550::0::1::::<><><>0<>0<><>::uid://c0wue07it5qci::::res://autoloads/audio_player/audio_player.gd
-::res://autoloads/global/::1769417077
-global.gd::GDScript::2116896909057370284::1769417077::0::1::::<>Node<><>0<>0<><>::
+::res://autoloads/global/::1769479356
+global.gd::GDScript::2116896909057370284::1769479356::0::1::::<>Node<><>0<>0<><>::
 ::res://autoloads/transition/::1769413148
 transition.gd::GDScript::4658357622680563802::1769413148::0::1::::<>Node<><>0<>0<><>::
 transition.tscn::PackedScene::1922387093377088723::1769413148::0::1::::<><><>0<>0<><>::uid://b7msp7xkio74q::::res://autoloads/transition/transition.gd<>uid://bsn7g4dohd35j::::res://theme/gdshader/transition.gdshader
-::res://language/::1769413841
+::res://language/::1769417315
 text.csv::Translation::101264647033981939::1769417274::1769417288::1::::<><><>0<>0<>ba9e1c6646cd927a2e2b0d2fecba512e<>res://language/text.en.translation<*>res://language/text.zh.translation::
-text.en.translation::OptimizedTranslation::1687349955314241692::1769417288::0::1::::<><><>0<>0<><>::
-text.zh.translation::OptimizedTranslation::5609271104463902625::1769417288::0::1::::<><><>0<>0<><>::
-::res://scenes/::1769400522
+text.en.translation::OptimizedTranslation::1687349955314241692::1769417315::0::1::::<><><>0<>0<><>::
+text.zh.translation::OptimizedTranslation::5609271104463902625::1769417315::0::1::::<><><>0<>0<><>::
+::res://scenes/::1769480543
+::res://scenes/player/::1769480963
+player_base.tscn::PackedScene::8109514389608708983::1769480952::0::1::::<><><>0<>0<><>::
+::res://scenes/player/player_base/::1769480963
 ::res://scenes/ui/::1769400538
-::res://scenes/ui/main_menu/::1769417108
-main_menu.gd::GDScript::918296660110316262::1769417108::0::1::::MainMenu<>Control<><>0<>0<><>::
-main_menu.tscn::PackedScene::5287370539565077994::1769417108::0::1::::<><><>0<>0<><>::uid://nc3hg4wkpqxa::::res://scenes/ui/main_menu/main_menu.gd<>uid://dtxhputnlac6::::res://assets/sounds/select-a.ogg<>uid://cpkigu5f3e85r::::res://theme/gdshader/background.gdshader<>uid://bjnh3sonwurje::::res://assets/sprites/background_tiled.png<>uid://d11l46p8hxwne::::res://theme/extra/font/font_48.tres<>uid://mbbv30uewh26::::res://theme/TextureButton/reddish_orange.tres<>uid://dpegkl2vv52qo::::res://theme/extra/font/font_16.tres<>uid://y8gtjg07mii3::::res://theme/TextureButton/graphite.tres
+::res://scenes/ui/main_menu/::1769480708
+main_menu.gd::GDScript::918296660110316262::1769480012::0::1::::MainMenu<>Control<><>0<>0<><>::
+main_menu.tscn::PackedScene::5287370539565077994::1769480708::0::1::::<><><>0<>0<><>::uid://nc3hg4wkpqxa::::res://scenes/ui/main_menu/main_menu.gd<>uid://dtxhputnlac6::::res://assets/sounds/select-a.ogg<>uid://cpkigu5f3e85r::::res://theme/gdshader/background.gdshader<>uid://bjnh3sonwurje::::res://assets/sprites/background_tiled.png<>uid://dvdn8parrbyvc::::res://assets/sounds/Bg Music.mp3<>uid://d11l46p8hxwne::::res://theme/extra/font/font_48.tres<>uid://mbbv30uewh26::::res://theme/TextureButton/reddish_orange.tres<>uid://dpegkl2vv52qo::::res://theme/extra/font/font_16.tres<>uid://y8gtjg07mii3::::res://theme/TextureButton/graphite.tres
 ::res://scenes_test/::1769412697
 ::res://scenes_test/test_scens_transition/::1769412794
 test_scens_transition.tscn::PackedScene::8809205181704612023::1769412794::0::1::::<><><>0<>0<><>::uid://d11l46p8hxwne::::res://theme/extra/font/font_48.tres
@@ -200,6 +203,6 @@ background.gdshader::Shader::5846815347278773009::1769416453::0::1::::<><><>0<>0
 transition.gdshader::Shader::3678611966969586301::1769416453::0::1::::<><><>0<>0<><>::
 ::res://theme/sound/::1769416528
 default_bus_layout.tres::AudioBusLayout::2586731759597147801::1769416515::0::1::::<><><>0<>0<><>::
-::res://theme/TextureButton/::1769416453
+::res://theme/TextureButton/::1769480613
 graphite.tres::AtlasTexture::1753055428395648972::1769406538::0::1::::<><><>0<>0<><>::uid://dy8e3xkc5qdbp::::res://assets/sprites/interface/Tilemap/tilemap_packed.png
-reddish_orange.tres::AtlasTexture::844430230264059649::1769416453::0::1::::<><><>0<>0<><>::
+reddish_orange.tres::AtlasTexture::844430230264059649::1769480613::0::1::::<><><>0<>0<><>::

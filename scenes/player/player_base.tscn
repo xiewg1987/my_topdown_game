@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnskrt4k5ldbr"]
+
+[ext_resource type="Script" uid="uid://doko3gb4wm4q6" path="res://scenes/player/player.gd" id="1_xb0ah"]
+[ext_resource type="Resource" uid="uid://16tnpwkquccc" path="res://custom_resource/player/player_dog/palyer_dog.tres" id="2_5np8l"]
+
+[node name="PlayerBase" type="CharacterBody2D"]
+editor_description = "基础玩家节点"
+script = ExtResource("1_xb0ah")
+player_resource = ExtResource("2_5np8l")
+metadata/_edit_group_ = true
+
+[node name="Visuais" type="Node2D" parent="."]
+unique_name_in_owner = true
+editor_description = "视觉节点"
+
+[node name="Shadow" type="Sprite2D" parent="Visuais"]
+
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="Visuais"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+editor_description = "碰撞节点"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+editor_description = "相机节点"

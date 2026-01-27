@@ -9,3 +9,9 @@ res://autoloads/global/global.gd
 res://language/text.en.translation
 res://language/text.zh.translation
 res://autoloads/audio_player/music_player.tscn
+res://scenes/player/player_base/player_base.tscn
+res://scenes/player/player_dog/player_dog.tscn
+res://scenes/player/player_base.tscn
+res://custom_resource/player/player_resource.gd
+res://custom_resource/player/player_dog/palyer_dog.tres
+res://scenes/player/player.gd

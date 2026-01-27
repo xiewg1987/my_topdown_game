@@ -15,6 +15,7 @@ shader = ExtResource("2_cmwxi")
 shader_parameter/speed = 0.5
 
 [node name="MainMenu" type="Control"]
+editor_description = "主场景"
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +27,7 @@ music_stream = ExtResource("2_tk7lu")
 click_stream = ExtResource("2_5mqxt")
 
 [node name="Banckground" type="TextureRect" parent="."]
+editor_description = "背景"
 material = SubResource("ShaderMaterial_r70wa")
 layout_mode = 1
 anchors_preset = 15
@@ -38,6 +40,7 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="Title" type="Label" parent="."]
+editor_description = "标题"
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -67,6 +70,7 @@ offset_right = 175.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
+tooltip_text = "主场景按钮组"
 metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainButtons"]
@@ -186,6 +190,7 @@ vertical_alignment = 1
 
 [node name="SettingsButtons" type="Control" parent="."]
 unique_name_in_owner = true
+editor_description = "设置按钮组"
 custom_minimum_size = Vector2(350, 220)
 layout_mode = 1
 anchors_preset = 7
@@ -277,7 +282,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "KEY_SFX"
 label_settings = ExtResource("6_52x6y")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -313,7 +317,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "KEY_WINDOW"
 label_settings = ExtResource("6_52x6y")
 horizontal_alignment = 1
 vertical_alignment = 1

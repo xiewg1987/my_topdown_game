@@ -1,3 +1,6 @@
+res://custom_resource/player/player_dog
+res://scenes/player/player_dog
+res://scenes/player
 res://autoloads/global
 res://autoloads/audio_player
 res://theme/sound
