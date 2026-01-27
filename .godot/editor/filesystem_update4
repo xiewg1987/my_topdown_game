@@ -23,3 +23,4 @@ res://custom_resource/player/player_cat/player_cat.tres
 res://custom_resource/player/player_mouse/player_mouse.tres
 res://components/health_component/health_component.tscn
 res://components/health_component/health_component.gd
+res://scenes/arena/arena.tscn
