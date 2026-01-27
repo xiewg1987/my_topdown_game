@@ -21,3 +21,5 @@ res://scenes/player/player_cat/player_cat.tscn
 res://custom_resource/player/player_bunny/player_bunny.tres
 res://custom_resource/player/player_cat/player_cat.tres
 res://custom_resource/player/player_mouse/player_mouse.tres
+res://components/health_component/health_component.tscn
+res://components/health_component/health_component.gd
