@@ -15,3 +15,9 @@ res://scenes/player/player_base.tscn
 res://custom_resource/player/player_resource.gd
 res://custom_resource/player/player_dog/palyer_dog.tres
 res://scenes/player/player.gd
+res://scenes/player/player_bunny/player_bunny.tscn
+res://scenes/player/player_mouse/player_mouse.tscn
+res://scenes/player/player_cat/player_cat.tscn
+res://custom_resource/player/player_bunny/player_bunny.tres
+res://custom_resource/player/player_cat/player_cat.tres
+res://custom_resource/player/player_mouse/player_mouse.tres

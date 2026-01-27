@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://rpd0au1i8457"]
 
 [ext_resource type="PackedScene" uid="uid://dnskrt4k5ldbr" path="res://scenes/player/player_base.tscn" id="1_x8h1r"]
-[ext_resource type="Texture2D" uid="uid://dawvmsgg5mc6o" path="res://assets/sprites/Shadow.png" id="2_c7rn8"]
+[ext_resource type="Resource" uid="uid://16tnpwkquccc" path="res://custom_resource/player/player_dog/palyer_dog.tres" id="2_c7rn8"]
 [ext_resource type="Texture2D" uid="uid://cnttucjccgouq" path="res://assets/sprites/players/tile_0003.png" id="2_q1868"]
 [ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://assets/sprites/players/tile_0000.png" id="2_v602w"]
 [ext_resource type="Texture2D" uid="uid://cemiyrcpjly84" path="res://assets/sprites/players/tile_0001.png" id="3_q1868"]
@@ -34,25 +34,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7rn8"]
 radius = 8.0
 
 [node name="PlayerDog" instance=ExtResource("1_x8h1r")]
-
-[node name="Shadow" parent="Visuais" index="0"]
-scale = Vector2(1.3, 1)
-texture = ExtResource("2_c7rn8")
+player_resource = ExtResource("2_c7rn8")
 
 [node name="PlayerAnimatedSprite" parent="Visuais" index="1"]
-position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ck3yk")
-animation = &"idle"
+animation = &"move"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1"]
-visible = false
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_c7rn8")

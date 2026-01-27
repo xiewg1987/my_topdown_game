@@ -1,6 +1,12 @@
+res://custom_resource/player/player_mouse
+res://custom_resource/player/player_cat
+res://custom_resource/player/player_bunny
+res://scenes/player/player_cat
+res://scenes/player
+res://scenes/player/player_mouse
+res://scenes/player/player_bunny
 res://custom_resource/player/player_dog
 res://scenes/player/player_dog
-res://scenes/player
 res://autoloads/global
 res://autoloads/audio_player
 res://theme/sound

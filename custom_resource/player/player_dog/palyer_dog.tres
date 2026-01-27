@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("1_r1pl6")
 player_id = "Dog"
-Player_name = "狗"
+Player_name = "KEY_DOG"
+max_hp = 8.0
+move_speed = 230.0
 icon = ExtResource("1_dlh60")
 metadata/_custom_type_script = "uid://blsalc4owo6k2"
