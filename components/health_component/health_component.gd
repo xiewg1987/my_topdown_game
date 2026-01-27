@@ -1,3 +1,4 @@
+@icon("res://assets/icon/heart-icon.svg")
 class_name HealthComponent
 extends Node2D
 

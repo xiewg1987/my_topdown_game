@@ -1,3 +1,4 @@
+res://autoloads/event_bus
 res://scenes/arena
 res://components/health_component
 res://custom_resource/player/player_mouse

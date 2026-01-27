@@ -24,6 +24,7 @@ Transition="*res://autoloads/transition/transition.tscn"
 MusicPlayer="*res://autoloads/audio_player/music_player.tscn"
 SFXPlayer="*res://autoloads/audio_player/sfx_player.tscn"
 Global="*res://autoloads/global/global.gd"
+EventBus="*res://autoloads/event_bus/event_bus.gd"
 
 [display]
 
