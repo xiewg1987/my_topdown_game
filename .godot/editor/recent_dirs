@@ -1,3 +1,6 @@
+res://autoloads/global
+res://autoloads/audio_player
+res://theme/sound
 res://scenes_test/test_scens_transition
 res://theme/gdshader
 res://autoloads/transition

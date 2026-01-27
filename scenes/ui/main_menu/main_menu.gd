@@ -1,8 +1,15 @@
 class_name MainMenu
 extends Control
 
+const BusType: Dictionary = {
+	"MUSIC": "Music",
+	"SFX": "SFX"
+} 
+
 const MAIN_TWEEN_TIME = 0.2 ## 主窗口补间时长
 const SETTINGS_TWEEN_TIME = 0.3 ## 设置窗口补间时长
+
+@export var click_stream: AudioStream 
 
 @onready var main_buttons: Control = %MainButtons ## 主窗口按钮组
 @onready var settings_buttons: Control = %SettingsButtons ## 设置按钮组
@@ -16,27 +23,66 @@ const SETTINGS_TWEEN_TIME = 0.3 ## 设置窗口补间时长
 @onready var window_button: TextureButton = %WindowButton ## 窗口按钮
 @onready var back_button: TextureButton = %BackButton ## 返回按钮
 
+@onready var music_label: Label = %MusicLabel
+@onready var sfx_label: Label = %SFXLabel
+@onready var window_label: Label = %WindowLabel
+
 
 var main_buttons_position: Vector2
 var settings_buttons_position_x: float
 
+var key_on = tr("KEY_ON")
+var key_of = tr("KEY_OFF")
+
+var key_music = tr("KEY_MUSIC")
+var key_fsx = tr("KEY_SFX")
+var key_window = tr("KEY_WINDOW")
+
 func _ready() -> void:
 	## 国际化配置
 	TranslationServer.set_locale("zh")
+	
+	update_audio_bus(BusType.MUSIC, music_label, Global.settings.music)
+	update_audio_bus(BusType.SFX, sfx_label, Global.settings.sfx)
+	update_fullscreen(Global.settings.fullscreen)
+	
 	main_buttons_position = main_buttons.position
 	settings_buttons_position_x = settings_buttons.position.x
 	## 连接开始游戏信号
 	play_button.pressed.connect(_on_play_button_pressed)
 	## 连接设置按钮按下信号
 	settings_button.pressed.connect(_on_settings_button_pressed)
+	## 连接退出按钮信号
+	quit_button.pressed.connect(_on_quit_button_pressed)
+	
+	## 连接音乐开关信号
+	music_button.pressed.connect(_on_music_button_pressed)
+	## 连接音效开关信号
+	sfx_button.pressed.connect(_on_sfx_button_pressed)
+	## 连接窗口信号
+	window_button.pressed.connect(_on_window_button_pressed)
 	## 连接设置按钮组返回信号
 	back_button.pressed.connect(_on_back_button_pressed)
 
+
+func update_audio_bus(bus_name: String, label: Label, is_on: bool) -> void:
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), is_on)
+	label.text = "%s: %s" % [key_music if bus_name == BusType.MUSIC else key_fsx, key_of if is_on else key_on ]
+
+
+func update_fullscreen(is_on: bool) -> void:
+	var mode = DisplayServer.WINDOW_MODE_FULLSCREEN if is_on else DisplayServer.WINDOW_MODE_WINDOWED
+	DisplayServer.window_set_mode(mode)
+	window_label.text = "%s: %s" % [key_window, key_of if is_on else key_on ]
+
+
 func _on_play_button_pressed() -> void:
 	Transition.transition_to("res://scenes_test/test_scens_transition/test_scens_transition.tscn")
+	SFXPlayer.play(click_stream)
 
 
 func _on_settings_button_pressed() -> void:
+	SFXPlayer.play(click_stream)
 	var viewport_y := get_viewport_rect().size.y
 	var tween := create_tween()
 	tween.tween_property(main_buttons, "global_position:y", viewport_y, MAIN_TWEEN_TIME)
@@ -44,7 +90,27 @@ func _on_settings_button_pressed() -> void:
 	tween.tween_property(settings_buttons, "global_position:x", main_buttons_position.x, SETTINGS_TWEEN_TIME)
 
 
+func _on_quit_button_pressed() -> void:
+	SFXPlayer.play(click_stream)
+	get_tree().quit()
+
+
+func _on_music_button_pressed() -> void:
+	SFXPlayer.play(click_stream)
+	update_audio_bus(BusType.MUSIC, music_label, Global.settings.music)
+
+func _on_sfx_button_pressed() -> void:
+	SFXPlayer.play(click_stream)
+	update_audio_bus(BusType.SFX, sfx_label, Global.settings.sfx)
+
+
+func _on_window_button_pressed() -> void:
+	SFXPlayer.play(click_stream)
+	update_fullscreen(Global.settings.fullscreen)
+
+
 func _on_back_button_pressed() -> void:
+	SFXPlayer.play(click_stream)
 	var tween := create_tween()
 	tween.tween_property(settings_buttons, "global_position:x", settings_buttons_position_x, SETTINGS_TWEEN_TIME)
 	tween.tween_interval(0.1)

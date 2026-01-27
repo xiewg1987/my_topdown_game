@@ -14,14 +14,22 @@ config/name="My Topdown Game"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://theme/sound/default_bus_layout.tres"
+
 [autoload]
 
 Transition="*res://autoloads/transition/transition.tscn"
+MusicPlayer="*res://autoloads/audio_player/music_player.tscn"
+SFXPlayer="*res://autoloads/audio_player/sfx_player.tscn"
+Global="*res://autoloads/global/global.gd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=3
 window/size/window_width_override=1344
 window/size/window_height_override=756
 window/stretch/mode="canvas_items"
