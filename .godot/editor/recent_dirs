@@ -1,3 +1,4 @@
+res://autoloads/cursor
 res://scenes/weapons/weapon_range_pistol
 res://scenes/weapons
 res://custom_resource/weapons/weapon_pistol
@@ -19,4 +20,3 @@ res://theme/sound
 res://scenes_test/test_scens_transition
 res://theme/gdshader
 res://autoloads/transition
-res://scenes/ui/main_menu

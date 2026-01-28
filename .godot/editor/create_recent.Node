@@ -1,12 +1,12 @@
+Sprite2D
+CanvasLayer
 Node2D
 Weapon
 Marker2D
-Sprite2D
 HealthComponent
 TextureProgressBar
 TextureRect
 Control
-CanvasLayer
 CollisionShape2D
 Camera2D
 AnimatedSprite2D

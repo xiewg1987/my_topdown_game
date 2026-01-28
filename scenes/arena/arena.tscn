@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cimejvq3aks4b"]
+[gd_scene load_steps=11 format=3 uid="uid://cimejvq3aks4b"]
 
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="1_1qjuf"]
 [ext_resource type="Script" uid="uid://bgfg0ustgdluf" path="res://scenes/arena/arena.gd" id="1_u52cf"]
+[ext_resource type="Texture2D" uid="uid://b5o6og4r1humu" path="res://assets/sprites/weapons/tiles/tile_0025.png" id="2_6w4xk"]
 [ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://assets/sprites/players/tile_0000.png" id="2_8trdl"]
 [ext_resource type="Texture2D" uid="uid://dxp7naqy4gvku" path="res://assets/sprites/interface/bar_under.png" id="3_5tue2"]
 [ext_resource type="Texture2D" uid="uid://bvr7in7eey6cb" path="res://assets/sprites/interface/bar_over.png" id="4_asdgj"]
@@ -15,6 +16,7 @@ region = Rect2(48, 0, 48, 48)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_u52cf")
+arena_cursor = ExtResource("2_6w4xk")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
