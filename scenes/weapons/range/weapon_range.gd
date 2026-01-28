@@ -6,6 +6,9 @@ const TILT_RANGE = 90 ## 武器翻转角度
 
 var direction: Vector2
 
+func _ready() -> void:
+	sprite.texture = weapon_resource.icon
+
 
 func _process(_delta: float) -> void:
 	rotate_weapon()

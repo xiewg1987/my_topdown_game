@@ -89,3 +89,4 @@ texture_over = ExtResource("4_asdgj")
 texture_progress = ExtResource("6_jx0ua")
 
 [node name="PlayerDog" parent="." instance=ExtResource("8_ii07k")]
+position = Vector2(321, 178)

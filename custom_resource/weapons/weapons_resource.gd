@@ -9,7 +9,7 @@ extends Resource
 @export var cooldown: float ## 冷却时间
 @export var mana_cons: float ## 法力消耗
 @export var spread: float ## 散布值
-@export var bullet_spread: float ## 子弹溅射
+@export var bullet_speed: float ## 射速
 
 
 ## 武器视觉

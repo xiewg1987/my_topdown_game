@@ -11,6 +11,6 @@ demage = 1.0
 cooldown = 0.4
 mana_cons = 1.0
 spread = 7.0
-bullet_spread = 250.0
+bullet_speed = 200.0
 icon = ExtResource("1_q1kl0")
 metadata/_custom_type_script = "uid://sxrd42tgdvgn"
