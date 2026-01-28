@@ -4,3 +4,6 @@ res://theme/gdshader/background.gdshader
 res://scenes/ui/main_menu/main_menu.tscn
 res://theme/TextureButton/reddish_orange.tres
 res://scenes/ui/main_menu/main_menu.gd
+res://scenes/arena/arena.tscn
+res://custom_resource/weapons/weapons_resource.gd
+res://custom_resource/weapons/weapon_pistol/weapon_pistol.tres

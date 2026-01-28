@@ -1,3 +1,4 @@
+res://custom_resource/weapons/weapon_pistol
 res://autoloads/event_bus
 res://scenes/arena
 res://components/health_component
@@ -19,4 +20,3 @@ res://autoloads/transition
 res://scenes/ui/main_menu
 res://theme/TextureButton
 res://theme
-res://language

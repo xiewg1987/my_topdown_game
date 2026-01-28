@@ -1,2 +1,3 @@
+WeaponsResource
 PlayerResource
 Theme
