@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://23bdolwaskmn"]
+
+[ext_resource type="PackedScene" uid="uid://0p1vk1iqtyia" path="res://scenes/weapons/range/weapon_range_base.tscn" id="1_d7cdh"]
+[ext_resource type="AudioStream" uid="uid://kxjapaxp4le4" path="res://assets/sounds/shoot-c.ogg" id="2_5pq0e"]
+[ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://assets/sprites/weapons/tiles/tile_0001.png" id="3_khufa"]
+
+[node name="WeaponRangePistol" instance=ExtResource("1_d7cdh")]
+shoot_sound = ExtResource("2_5pq0e")
+
+[node name="Pivot" parent="." index="0"]
+rotation = -0.71733034
+
+[node name="Sprite2D" parent="Pivot" index="0"]
+texture = ExtResource("3_khufa")

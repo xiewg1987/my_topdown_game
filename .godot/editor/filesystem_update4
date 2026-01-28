@@ -7,3 +7,16 @@ res://scenes/ui/main_menu/main_menu.gd
 res://scenes/arena/arena.tscn
 res://custom_resource/weapons/weapons_resource.gd
 res://custom_resource/weapons/weapon_pistol/weapon_pistol.tres
+res://language/text.en.translation
+res://language/text.zh.translation
+res://scenes/weapon/weapon_range_base.tscn
+res://scenes/weapons/weapon_range_base.tscn
+res://scenes/weapons/weapon_range_base.gd
+res://scenes/weapons/weapon_range_pistol/weapon_range_pistol.tscn
+res://scenes/weapons/range/weapon_range_base.tscn
+res://scenes/weapons/weapon.gd
+res://scenes/weapons/range/weapon_range.gd
+res://scenes/player/player_base.tscn
+res://scenes/player/weapon_controller.gd
+res://scenes/player/player_dog/player_dog.tscn
+res://scenes/player/player_cat/player_cat.tscn
