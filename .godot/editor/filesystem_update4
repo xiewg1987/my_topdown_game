@@ -1,8 +1,6 @@
-res://scenes/player/player.gd
-res://scenes/player/player_base.tscn
+res://autoloads/transition/transition.tscn
 res://theme/gdshader/transition.gdshader
 res://theme/gdshader/background.gdshader
-res://autoloads/event_bus/event_bus.gd
-res://autoloads/event_bus/palyer/player_signal.gd
-res://scenes/arena/arena.tscn
-res://scenes/arena/arena.gd
+res://scenes/ui/main_menu/main_menu.tscn
+res://theme/TextureButton/reddish_orange.tres
+res://scenes/ui/main_menu/main_menu.gd

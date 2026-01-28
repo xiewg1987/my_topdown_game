@@ -32,16 +32,10 @@ const SETTINGS_TWEEN_TIME = 0.3 ## 设置窗口补间时长
 var main_buttons_position: Vector2
 var settings_buttons_position_x: float
 
-var key_on = tr("KEY_ON")
-var key_of = tr("KEY_OFF")
-
-var key_music = tr("KEY_MUSIC")
-var key_fsx = tr("KEY_SFX")
-var key_window = tr("KEY_WINDOW")
 
 func _ready() -> void:
 	# 国际化配置
-	TranslationServer.set_locale("zh")
+	TranslationServer.set_locale("en")
 	
 	Global.load_date()
 	update_audio_bus(BusType.MUSIC, music_label, Global.settings.music)
@@ -72,13 +66,16 @@ func _ready() -> void:
 
 func update_audio_bus(bus_name: String, label: Label, is_on: bool) -> void:
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), is_on)
-	label.text = "%s: %s" % [key_music if bus_name == BusType.MUSIC else key_fsx, key_of if is_on else key_on ]
-
+	var key_name = tr("KEY_MUSIC") if bus_name == BusType.MUSIC else tr("KEY_SFX")
+	var key_value = tr("KEY_ON") if is_on else tr("KEY_OFF")
+	label.text = key_name + ": " + key_value
+	
 
 func update_fullscreen(is_on: bool) -> void:
 	var mode = DisplayServer.WINDOW_MODE_FULLSCREEN if is_on else DisplayServer.WINDOW_MODE_WINDOWED
 	DisplayServer.window_set_mode(mode)
-	window_label.text = "%s: %s" % [key_window, key_of if is_on else key_on ]
+	var key_value = tr("KEY_ON") if is_on else tr("KEY_OFF")
+	window_label.text = tr("KEY_WINDOW") + ": " + key_value
 
 
 func _on_play_button_pressed() -> void:
