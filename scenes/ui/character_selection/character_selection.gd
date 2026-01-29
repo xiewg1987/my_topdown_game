@@ -8,6 +8,7 @@ const WEAPON_CARD_SCENE = preload("uid://b0bypmafxdd7o")
 
 @export var selection_cursor: Texture2D
 @export var sound_stream: AudioStream
+@export var hover_stream: AudioStream
 @export var players: Array[PlayerResource]
 @export var weapons: Array[WeaponResource]
 
@@ -54,6 +55,7 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_player_card_pressed(player_resource: PlayerResource) -> void:
+	if not Global.selected_player and not Global.selected_weapon: return
 	SFXPlayer.play(sound_stream)
 	Global.selected_player = player_resource
 
@@ -61,3 +63,7 @@ func _on_player_card_pressed(player_resource: PlayerResource) -> void:
 func _on_weapon_card_pressed(weapon_resource: WeaponResource) -> void:
 	SFXPlayer.play(sound_stream)
 	Global.selected_weapon = weapon_resource
+
+
+func _on_button_mouse_entered() -> void:
+	SFXPlayer.play(hover_stream)

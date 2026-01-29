@@ -27,6 +27,7 @@ SFXPlayer="*res://autoloads/audio_player/sfx_player.tscn"
 Global="*res://autoloads/global/global.gd"
 EventBus="*res://autoloads/event_bus/event_bus.gd"
 Cursor="*res://autoloads/cursor/cursor.tscn"
+DampedOscillator="*res://addons/DampedOscillator/scripts/damped_oscillator.tscn"
 
 [display]
 
@@ -35,6 +36,10 @@ window/size/viewport_height=360
 window/size/window_width_override=1344
 window/size/window_height_override=756
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/DampedOscillator/plugin.cfg")
 
 [input]
 

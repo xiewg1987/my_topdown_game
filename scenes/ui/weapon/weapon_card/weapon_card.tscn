@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0bypmafxdd7o"]
+[gd_scene load_steps=6 format=3 uid="uid://b0bypmafxdd7o"]
 
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="1_xroqn"]
 [ext_resource type="Script" uid="uid://lheg63d4ql7x" path="res://scenes/ui/weapon/weapon_card/weapon_card.gd" id="2_g67tf"]
 [ext_resource type="Resource" uid="uid://dtgas2kcea58i" path="res://custom_resource/weapons/weapon_pistol/weapon_pistol.tres" id="3_g67tf"]
+[ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://assets/sounds/button_hover.wav" id="3_kbmt5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v6w3"]
 atlas = ExtResource("1_xroqn")
@@ -14,6 +15,7 @@ offset_bottom = 48.0
 texture_normal = SubResource("AtlasTexture_5v6w3")
 stretch_mode = 5
 script = ExtResource("2_g67tf")
+hover_stream = ExtResource("3_kbmt5")
 weapon_resource = ExtResource("3_g67tf")
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -30,4 +32,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(20, 20)
 mouse_filter = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

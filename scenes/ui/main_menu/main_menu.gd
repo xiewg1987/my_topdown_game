@@ -13,6 +13,7 @@ const SETTINGS_TWEEN_TIME = 0.3 ## 设置窗口补间时长
 
 @export var meun_cursor: Texture2D
 @export var music_stream: AudioStream
+@export var hover_stream: AudioStream
 @export var sound_stream: AudioStream
 
 @onready var main_buttons: Control = %MainButtons ## 主窗口按钮组
@@ -101,6 +102,10 @@ func _on_back_button_pressed() -> void:
 	tween.tween_property(settings_buttons, "global_position:x", settings_buttons_position_x, SETTINGS_TWEEN_TIME)
 	tween.tween_interval(0.1)
 	tween.tween_property(main_buttons, "global_position:y", main_buttons_position.y, MAIN_TWEEN_TIME)
+
+
+func _on_button_mouse_entered() -> void:
+	SFXPlayer.play(hover_stream)
 
 
 func _notification(what: int) -> void:
