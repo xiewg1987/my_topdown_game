@@ -34,13 +34,13 @@ func load_selection_items() -> void:
 	for player_resource: PlayerResource in players:
 		var player_card_instance := PLAYER_CARD_SCENE.instantiate() as PlayerCard
 		player_container.add_child(player_card_instance)
-		player_card_instance.pressed.connect(_on_player_card_pressed.bind(player_resource))
+		player_card_instance.pressed.connect(_on_player_card_pressed.bind(player_resource, player_card_instance))
 		player_card_instance.player_resource = player_resource
 	
 	for weapon_resource: WeaponResource in weapons:
 		var weapon_card_instance := WEAPON_CARD_SCENE.instantiate() as WeaponCard
 		weapon_container.add_child(weapon_card_instance)
-		weapon_card_instance.pressed.connect(_on_weapon_card_pressed.bind(weapon_resource))
+		weapon_card_instance.pressed.connect(_on_weapon_card_pressed.bind(weapon_resource, weapon_card_instance))
 		weapon_card_instance.weapon_resource = weapon_resource
 
 
@@ -54,14 +54,20 @@ func _on_back_button_pressed() -> void:
 	SFXPlayer.play(sound_stream)
 
 
-func _on_player_card_pressed(player_resource: PlayerResource) -> void:
+func _on_player_card_pressed(player_resource: PlayerResource, selected_card: PlayerCard) -> void:
 	if not Global.selected_player and not Global.selected_weapon: return
 	SFXPlayer.play(sound_stream)
+	for card: PlayerCard in player_container.get_children():
+		card.selector.hide()
+	selected_card.selector.show()
 	Global.selected_player = player_resource
 
 
-func _on_weapon_card_pressed(weapon_resource: WeaponResource) -> void:
+func _on_weapon_card_pressed(weapon_resource: WeaponResource, selected_card: WeaponCard) -> void:
 	SFXPlayer.play(sound_stream)
+	for card: WeaponCard in weapon_container.get_children():
+		card.selector.hide()
+	selected_card.selector.show()
 	Global.selected_weapon = weapon_resource
 
 

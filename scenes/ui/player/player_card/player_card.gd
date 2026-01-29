@@ -3,6 +3,7 @@ extends TextureButton
 
 @export var hover_stream: AudioStream
 @export var player_resource: PlayerResource: set = _set_player_resource
+@onready var selector: TextureRect = %Selector
 
 @onready var icon: TextureRect = %Icon
 

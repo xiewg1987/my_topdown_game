@@ -1,8 +1,8 @@
+TextureRect
 Label
 HBoxContainer
 TextureButton
 Control
-TextureRect
 CanvasLayer
 Sprite2D
 Node2D

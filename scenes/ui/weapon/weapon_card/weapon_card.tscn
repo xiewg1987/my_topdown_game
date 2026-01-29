@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0bypmafxdd7o"]
+[gd_scene load_steps=7 format=3 uid="uid://b0bypmafxdd7o"]
 
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="1_xroqn"]
 [ext_resource type="Script" uid="uid://lheg63d4ql7x" path="res://scenes/ui/weapon/weapon_card/weapon_card.gd" id="2_g67tf"]
 [ext_resource type="Resource" uid="uid://dtgas2kcea58i" path="res://custom_resource/weapons/weapon_pistol/weapon_pistol.tres" id="3_g67tf"]
 [ext_resource type="AudioStream" uid="uid://dlyw3ke5ldgn7" path="res://assets/sounds/button_hover.wav" id="3_kbmt5"]
+[ext_resource type="Texture2D" uid="uid://btvvlw1s6noca" path="res://assets/sprites/interface/Selector.png" id="5_gkyd4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v6w3"]
 atlas = ExtResource("1_xroqn")
@@ -17,6 +18,26 @@ stretch_mode = 5
 script = ExtResource("2_g67tf")
 hover_stream = ExtResource("3_kbmt5")
 weapon_resource = ExtResource("3_g67tf")
+
+[node name="Selector" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_gkyd4")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Icon" type="TextureRect" parent="."]
 unique_name_in_owner = true
