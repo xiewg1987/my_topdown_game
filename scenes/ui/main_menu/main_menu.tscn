@@ -10,7 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://theme/extra/font/font_16.tres" id="6_52x6y"]
 [ext_resource type="Texture2D" uid="uid://y8gtjg07mii3" path="res://theme/TextureButton/graphite.tres" id="7_8ouhi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2pxis"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk7lu"]
 atlas = ExtResource("2_chxti")
 region = Rect2(80, 64, 15, 15)
 
@@ -23,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ch07")
-moun_cursor = SubResource("AtlasTexture_2pxis")
+meun_cursor = SubResource("AtlasTexture_tk7lu")
 music_stream = ExtResource("2_tk7lu")
 click_stream = ExtResource("2_5mqxt")
 

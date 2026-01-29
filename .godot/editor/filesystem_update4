@@ -8,3 +8,8 @@ res://language/text.en.translation
 res://language/text.zh.translation
 res://scenes/ui/player/player_card/player_card.tscn
 res://scenes/ui/weapon/weapon_card/weapon_card.tscn
+res://scenes/ui/player/player_card/player_card.gd
+res://scenes/ui/weapon/weapon_card/weapon_card.gd
+res://scenes/ui/character_selection/character_selection.gd
+res://scenes/ui/main_menu/main_menu.gd
+res://scenes/player/player_dog/player_dog.tscn

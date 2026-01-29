@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-const ARENA_PATH = "res://scenes/arena/arena.tscn"
+const CHARACTER_SELECTION = "res://scenes/ui/character_selection/character_selection.tscn"
 
 const BusType: Dictionary = {
 	"MUSIC": "Music",
@@ -11,7 +11,7 @@ const BusType: Dictionary = {
 const MAIN_TWEEN_TIME = 0.2 ## 主窗口补间时长
 const SETTINGS_TWEEN_TIME = 0.3 ## 设置窗口补间时长
 
-@export var moun_cursor: Texture2D
+@export var meun_cursor: Texture2D
 @export var music_stream: AudioStream
 @export var click_stream: AudioStream
 
@@ -29,8 +29,8 @@ var settings_buttons_position_x: float
 
 func _ready() -> void:
 	# 国际化配置
-	TranslationServer.set_locale("en")
-	Cursor.sprite.texture = moun_cursor
+	TranslationServer.set_locale("zh")
+	Cursor.sprite.texture = meun_cursor
 	Global.load_date()
 	update_audio_bus(BusType.MUSIC, music_label, Global.settings.music)
 	update_audio_bus(BusType.SFX, sfx_label, Global.settings.sfx)
@@ -58,7 +58,7 @@ func update_fullscreen(is_on: bool) -> void:
 
 
 func _on_play_button_pressed() -> void:
-	Transition.transition_to(ARENA_PATH)
+	Transition.transition_to(CHARACTER_SELECTION)
 	SFXPlayer.play(click_stream)
 
 
