@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgc8bf1w5ksd2"]
+
+[ext_resource type="Texture2D" uid="uid://clv0dnuyxhqg8" path="res://assets/sprites/interface/Button_Blue.png" id="1_8wuk3"]
+[ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://assets/sprites/players/tile_0000.png" id="2_prmrk"]
+
+[node name="PlayerCard" type="TextureButton"]
+custom_minimum_size = Vector2(60, 60)
+texture_normal = ExtResource("1_8wuk3")
+stretch_mode = 5
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_prmrk")

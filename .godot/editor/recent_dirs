@@ -1,3 +1,5 @@
+res://scenes/ui/weapon/weapon_card
+res://scenes/ui/character_selection
 res://scenes/weapons/range/weapon_range_uzi
 res://scenes/weapons/range
 res://scenes/weapons/range/weapon_range_submachine_gun
@@ -18,5 +20,3 @@ res://scenes/arena
 res://components/health_component
 res://custom_resource/player/player_mouse
 res://custom_resource/player/player_cat
-res://custom_resource/player/player_bunny
-res://scenes/player/player_cat

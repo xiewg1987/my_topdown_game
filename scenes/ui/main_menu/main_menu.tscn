@@ -1,23 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://chlihqwmkqhx7"]
+[gd_scene load_steps=11 format=3 uid="uid://chlihqwmkqhx7"]
 
 [ext_resource type="Script" uid="uid://nc3hg4wkpqxa" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1ch07"]
 [ext_resource type="AudioStream" uid="uid://dtxhputnlac6" path="res://assets/sounds/select-a.ogg" id="2_5mqxt"]
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="2_chxti"]
-[ext_resource type="Shader" uid="uid://cpkigu5f3e85r" path="res://theme/gdshader/background.gdshader" id="2_cmwxi"]
-[ext_resource type="Texture2D" uid="uid://bjnh3sonwurje" path="res://assets/sprites/background_tiled.png" id="2_e8t4i"]
 [ext_resource type="AudioStream" uid="uid://dvdn8parrbyvc" path="res://assets/sounds/Bg Music.mp3" id="2_tk7lu"]
 [ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://theme/extra/font/font_48.tres" id="4_cmwxi"]
 [ext_resource type="Texture2D" uid="uid://mbbv30uewh26" path="res://theme/TextureButton/reddish_orange.tres" id="5_8ouhi"]
+[ext_resource type="PackedScene" uid="uid://c362arkl0oiht" path="res://scenes/ui/banckground/banckground.tscn" id="5_tk7lu"]
 [ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://theme/extra/font/font_16.tres" id="6_52x6y"]
 [ext_resource type="Texture2D" uid="uid://y8gtjg07mii3" path="res://theme/TextureButton/graphite.tres" id="7_8ouhi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pxis"]
 atlas = ExtResource("2_chxti")
 region = Rect2(80, 64, 15, 15)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r70wa"]
-shader = ExtResource("2_cmwxi")
-shader_parameter/speed = 0.5
 
 [node name="MainMenu" type="Control"]
 editor_description = "主场景"
@@ -31,19 +26,6 @@ script = ExtResource("1_1ch07")
 moun_cursor = SubResource("AtlasTexture_2pxis")
 music_stream = ExtResource("2_tk7lu")
 click_stream = ExtResource("2_5mqxt")
-
-[node name="Banckground" type="TextureRect" parent="."]
-editor_description = "背景"
-material = SubResource("ShaderMaterial_r70wa")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_e8t4i")
-expand_mode = 1
-stretch_mode = 1
 
 [node name="Title" type="Label" parent="."]
 editor_description = "标题"
@@ -118,7 +100,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "KEY_Play"
+text = "KEY_PLAY"
 label_settings = ExtResource("6_52x6y")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -354,6 +336,8 @@ text = "KEY_BACK"
 label_settings = ExtResource("6_52x6y")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BanckgroundLayer" parent="." instance=ExtResource("5_tk7lu")]
 
 [connection signal="pressed" from="MainButtons/VBoxContainer/Paly/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainButtons/VBoxContainer/Settings/SettingsButton" to="." method="_on_settings_button_pressed"]
