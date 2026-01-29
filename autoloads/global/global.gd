@@ -19,6 +19,16 @@ var player_scene: Dictionary[String, PackedScene] = {
 }
 
 
+var weapons_scene: Dictionary[String, PackedScene] = {
+	"UZi": preload("uid://br5gwb7lsuxv7"),
+	"Pistol": preload("uid://23bdolwaskmn"),
+	"Rifles": preload("uid://b7u68q5ek6isv"),
+	"Shotgun": preload("uid://bd853itgqoqts"),
+	"Sniper": preload("uid://bhvdhklwqft3s"),
+	"MachineGun": preload("uid://bc8duq2j4gc2g"),
+	"SubmachineGun": preload("uid://luu61ow810kq")
+}
+
 var selected_player: PlayerResource
 var selected_weapon: WeaponResource
 
@@ -27,6 +37,8 @@ var selected_weapon: WeaponResource
 func get_player_scene() -> PackedScene:
 	return player_scene[selected_player.player_id]
 
+func get_weapons_scene() -> PackedScene:
+	return weapons_scene[selected_weapon.weapon_id]
 
 ## 保存配置
 func save_date() -> void:

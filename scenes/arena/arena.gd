@@ -17,6 +17,7 @@ func _ready() -> void:
 func load_game_selection() -> void:
 	var player_instance := Global.get_player_scene().instantiate() as Player
 	add_child(player_instance)
+	player_instance.weapon_controller.equip_weapon()
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:
 	health_bar.value = current_health / max_health

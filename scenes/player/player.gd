@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var visuais: Node2D = %Visuais ## 玩家视觉
 @onready var player_animated_sprite: AnimatedSprite2D = %PlayerAnimatedSprite ## 玩家动画
 @onready var health_component: HealthComponent = %HealthComponent
+@onready var weapon_controller: WeaponController = %WeaponController
 
 var can_move: bool = true ## 移动判断
 var movement: Vector2 ## 移动

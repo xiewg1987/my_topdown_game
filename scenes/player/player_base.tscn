@@ -35,6 +35,7 @@ script = ExtResource("3_0t7ad")
 metadata/_custom_type_script = "uid://b4emqkh6ethy8"
 
 [node name="WeaponController" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("4_t60ga")
 
 [connection signal="on_unit_damaged" from="HealthComponent" to="." method="_on_health_component_on_unit_damaged"]

@@ -22,3 +22,5 @@ res://scenes/arena/arena.gd
 res://scenes/arena/arena.tscn
 res://scenes/player/weapon_controller.gd
 res://scenes/player/player_base.tscn
+res://custom_resource/weapons/weapon_uzi/weapon_uzi.tres
+res://scenes/player/player.gd

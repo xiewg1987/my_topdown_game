@@ -15,6 +15,5 @@ extends Resource
 ## 武器视觉
 @export_group("Weapons Visuais")
 @export var icon: Texture2D ## 武器图标
-@export var scene: PackedScene ## 武器场景
 @export var bullte_scene: PackedScene ## 子弹场景
 @export_multiline var description: String ## 武器描述
