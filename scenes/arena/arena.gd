@@ -12,7 +12,11 @@ extends Node2D
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
+	load_game_selection()
 
+func load_game_selection() -> void:
+	var player_instance := Global.get_player_scene().instantiate() as Player
+	add_child(player_instance)
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:
 	health_bar.value = current_health / max_health

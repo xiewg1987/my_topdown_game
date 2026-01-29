@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponsResource" load_steps=3 format=3 uid="uid://cpubfxf5a3t3u"]
 
 [ext_resource type="Texture2D" uid="uid://bpa7uv0kkmria" path="res://assets/sprites/weapons/tiles/tile_0005.png" id="1_h28v7"]
-[ext_resource type="Script" uid="uid://sxrd42tgdvgn" path="res://custom_resource/weapons/weapons_resource.gd" id="1_t3gw7"]
+[ext_resource type="Script" uid="uid://sxrd42tgdvgn" path="res://custom_resource/weapons/weapon_resource.gd" id="1_t3gw7"]
 
 [resource]
 script = ExtResource("1_t3gw7")

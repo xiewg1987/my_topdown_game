@@ -2,12 +2,30 @@ extends Node
 
 var save_setting_path := "user://settings.json"
 
-
+## 配置字典
 var settings: Dictionary = {
 	"music": true,
-	"sfx": true,
+	"sfx": false,
 	"fullscreen": false
 }
+
+
+## 角色场景
+var player_scene: Dictionary[String, PackedScene] = {
+	"Dog": preload("uid://rpd0au1i8457"),
+	"Cat": preload("uid://dwhg4i6g6boml"),
+	"Bunny": preload("uid://sbtvw5u0mwws"),
+	"Mouse": preload("uid://dji0x6mq1dshp")
+}
+
+
+var selected_player: PlayerResource
+var selected_weapon: WeaponResource
+
+
+
+func get_player_scene() -> PackedScene:
+	return player_scene[selected_player.player_id]
 
 
 ## 保存配置

@@ -13,6 +13,7 @@ metadata/_edit_group_ = true
 [node name="Visuais" type="Node2D" parent="."]
 unique_name_in_owner = true
 editor_description = "视觉节点"
+scale = Vector2(1.25, 1.25)
 
 [node name="Shadow" type="Sprite2D" parent="Visuais"]
 scale = Vector2(1.3, 1)

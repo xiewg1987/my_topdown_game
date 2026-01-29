@@ -1,14 +1,8 @@
 class_name WeaponController
 extends Node2D
 
-@onready var weapon_uzi: WeaponRange = $WeaponRangeUZi
-
 var current_weapon: Weapon ## 当前武器
 var target_position: Vector2  ## 发射位置
-
-
-func _ready() -> void:
-	current_weapon = weapon_uzi
 
 
 func _process(_delta: float) -> void:

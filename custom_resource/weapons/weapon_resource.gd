@@ -1,4 +1,4 @@
-class_name WeaponsResource
+class_name WeaponResource
 extends Resource
 
 ## 武器数据

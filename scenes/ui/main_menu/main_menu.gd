@@ -13,7 +13,7 @@ const SETTINGS_TWEEN_TIME = 0.3 ## 设置窗口补间时长
 
 @export var meun_cursor: Texture2D
 @export var music_stream: AudioStream
-@export var click_stream: AudioStream
+@export var sound_stream: AudioStream
 
 @onready var main_buttons: Control = %MainButtons ## 主窗口按钮组
 @onready var settings_buttons: Control = %SettingsButtons ## 设置按钮组
@@ -59,11 +59,11 @@ func update_fullscreen(is_on: bool) -> void:
 
 func _on_play_button_pressed() -> void:
 	Transition.transition_to(CHARACTER_SELECTION)
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 
 
 func _on_settings_button_pressed() -> void:
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 	var viewport_y := get_viewport_rect().size.y
 	var tween := create_tween()
 	tween.tween_property(main_buttons, "global_position:y", viewport_y, MAIN_TWEEN_TIME)
@@ -72,31 +72,31 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_quit_button_pressed() -> void:
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 	Global.save_date()
 	get_tree().quit()
 
 
 func _on_music_button_pressed() -> void:
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 	Global.settings.music = not Global.settings.music
 	update_audio_bus(BusType.MUSIC, music_label, Global.settings.music)
 
 
 func _on_sfx_button_pressed() -> void:
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 	Global.settings.sfx = not Global.settings.sfx
 	update_audio_bus(BusType.SFX, sfx_label, Global.settings.sfx)
 
 
 func _on_window_button_pressed() -> void:
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 	Global.settings.fullscreen = not Global.settings.fullscreen
 	update_fullscreen(Global.settings.fullscreen)
 
 
 func _on_back_button_pressed() -> void:
-	SFXPlayer.play(click_stream)
+	SFXPlayer.play(sound_stream)
 	var tween := create_tween()
 	tween.tween_property(settings_buttons, "global_position:x", settings_buttons_position_x, SETTINGS_TWEEN_TIME)
 	tween.tween_interval(0.1)

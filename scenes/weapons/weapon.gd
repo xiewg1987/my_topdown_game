@@ -1,7 +1,7 @@
 class_name Weapon
 extends Node2D
 
-@export var weapon_resource: WeaponsResource
+@export var weapon_resource: WeaponResource
 @export var shoot_sound: AudioStream
 
 @onready var sprite: Sprite2D = %Sprite2D

@@ -1,5 +1,5 @@
-res://scenes/ui/weapon/weapon_card
 res://scenes/ui/character_selection
+res://scenes/ui/weapon/weapon_card
 res://scenes/weapons/range/weapon_range_uzi
 res://scenes/weapons/range
 res://scenes/weapons/range/weapon_range_submachine_gun

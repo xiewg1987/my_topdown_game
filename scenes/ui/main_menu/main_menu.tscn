@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://chlihqwmkqhx7"]
 
 [ext_resource type="Script" uid="uid://nc3hg4wkpqxa" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1ch07"]
-[ext_resource type="AudioStream" uid="uid://dtxhputnlac6" path="res://assets/sounds/select-a.ogg" id="2_5mqxt"]
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="2_chxti"]
 [ext_resource type="AudioStream" uid="uid://dvdn8parrbyvc" path="res://assets/sounds/Bg Music.mp3" id="2_tk7lu"]
 [ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://theme/extra/font/font_48.tres" id="4_cmwxi"]
+[ext_resource type="AudioStream" uid="uid://uhc8vbgtjq81" path="res://theme/audio/sound/random_sound.tres" id="4_tk7lu"]
 [ext_resource type="Texture2D" uid="uid://mbbv30uewh26" path="res://theme/TextureButton/reddish_orange.tres" id="5_8ouhi"]
 [ext_resource type="PackedScene" uid="uid://c362arkl0oiht" path="res://scenes/ui/banckground/banckground.tscn" id="5_tk7lu"]
 [ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://theme/extra/font/font_16.tres" id="6_52x6y"]
@@ -25,7 +25,7 @@ grow_vertical = 2
 script = ExtResource("1_1ch07")
 meun_cursor = SubResource("AtlasTexture_tk7lu")
 music_stream = ExtResource("2_tk7lu")
-click_stream = ExtResource("2_5mqxt")
+sound_stream = ExtResource("4_tk7lu")
 
 [node name="Title" type="Label" parent="."]
 editor_description = "标题"
