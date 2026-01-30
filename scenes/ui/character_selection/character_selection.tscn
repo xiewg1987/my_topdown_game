@@ -63,15 +63,15 @@ vertical_alignment = 1
 
 [node name="PlayerContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(450, 80)
+custom_minimum_size = Vector2(450, 64)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -225.0
-offset_top = 84.0
+offset_top = 108.0
 offset_right = 225.0
-offset_bottom = 164.0
+offset_bottom = 188.0
 grow_horizontal = 2
 alignment = 1
 

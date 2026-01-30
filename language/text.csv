@@ -13,10 +13,17 @@ KEY_CAT,Cat,猫
 KEY_DOG,Dog,狗
 KEY_MOUSE,Mouse,鼠
 KEY_PISTOL,Pistol,手枪
+KEY_PISTOL_DESCRIPTION,Low damage per bullet， but high fire rate.,每发子弹的伤害较低，但射击速度较快。
 KEY_ZUI,ZUI,乌兹
+KEY_ZUI_DESCRIPTION,Small SMG， very fast fire rate， low damage per bullet.,小型冲锋枪，射击速度极快，每发子弹的伤害较低。
 KEY_MACHINE_GUN,MACHINE_GUN,机枪
+KEY_MACHINE_GUN_DESCRIPTION,Small SMG， very fast fire rate， low damage per bullet.,小型冲锋枪，射击速度极快，每发子弹的伤害较低。
 KEY_RIFLE,RIFLE,AK_47
+KEY_RIFLE_DESCRIPTION,High damage per bullet，but low fire rate.,每发子弹的伤害较高，但射击速度较慢。
 KEY_SHOTGUN,SHOTGUN,霰弹枪
+KEY_SHOTGUN_DESCRIPTION,Medium damage per bullet， medium fire rate， medium damage per shot.,中伤害每发子弹，中射击速度，中伤害每发。
 KEY_SNIPER,SNIPER,狙击枪
+KEY_SNIPER_DESCRIPTION,High damage per bullet， but low fire rate.,每发子弹的伤害较高，但射击速度较慢。
 KEY_SUBMACHINE_GUN,SUBMACHINE_GUN,冲锋枪
+KEY_SUBMACHINE_GUN_DESCRIPTION,Medium damage per bullet， medium fire rate， medium damage per shot.,中伤害每发子弹，中射击速度，中伤害每发。
 KEY_CHARACTER_SELECTION,CHARACTER_SELECTION,角色选择

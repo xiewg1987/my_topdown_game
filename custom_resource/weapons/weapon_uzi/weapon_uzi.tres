@@ -12,4 +12,5 @@ cooldown = 0.2
 mana_cons = 1.0
 spread = 1.0
 icon = ExtResource("1_v033k")
+description = "KEY_ZUI_DESCRIPTION"
 metadata/_custom_type_script = "uid://sxrd42tgdvgn"

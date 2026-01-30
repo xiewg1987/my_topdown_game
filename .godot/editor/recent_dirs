@@ -1,3 +1,4 @@
+res://scenes/ui/description_panel
 C:/Users/xiewe/Downloads
 res://scenes/ui/character_selection
 res://scenes/ui/weapon/weapon_card
@@ -19,5 +20,3 @@ res://custom_resource/weapons/weapon_pistol
 res://autoloads/event_bus
 res://scenes/arena
 res://components/health_component
-res://custom_resource/player/player_mouse
-res://custom_resource/player/player_cat

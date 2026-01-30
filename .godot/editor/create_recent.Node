@@ -1,5 +1,6 @@
-TextureRect
 Label
+NinePatchRect
+TextureRect
 HBoxContainer
 TextureButton
 Control
@@ -11,4 +12,3 @@ Marker2D
 HealthComponent
 TextureProgressBar
 CollisionShape2D
-Camera2D

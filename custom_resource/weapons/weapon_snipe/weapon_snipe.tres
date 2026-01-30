@@ -13,4 +13,5 @@ mana_cons = 2.5
 spread = 1.0
 bullet_speed = 400.0
 icon = ExtResource("1_4abin")
+description = "KEY_SNIPER_DESCRIPTION"
 metadata/_custom_type_script = "uid://sxrd42tgdvgn"

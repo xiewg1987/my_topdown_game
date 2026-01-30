@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponsResource" load_steps=3 format=3 uid="uid://dc2xp411u3lp1"]
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dc2xp411u3lp1"]
 
 [ext_resource type="Texture2D" uid="uid://bbv84wvnnbldm" path="res://assets/sprites/weapons/tiles/tile_0007.png" id="1_2oj5o"]
 [ext_resource type="Script" uid="uid://sxrd42tgdvgn" path="res://custom_resource/weapons/weapon_resource.gd" id="1_dg6iv"]
@@ -13,4 +13,5 @@ mana_cons = 2.0
 spread = 10.0
 bullet_speed = 260.0
 icon = ExtResource("1_2oj5o")
+description = "KEY_SHOTGUN_DESCRIPTION"
 metadata/_custom_type_script = "uid://sxrd42tgdvgn"
