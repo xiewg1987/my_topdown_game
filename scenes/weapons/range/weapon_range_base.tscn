@@ -13,5 +13,6 @@ scale = Vector2(1.5, 1.5)
 unique_name_in_owner = true
 position = Vector2(12, 0)
 
-[node name="Marker2D" type="Marker2D" parent="Pivot"]
+[node name="FirePosition" type="Marker2D" parent="Pivot"]
+unique_name_in_owner = true
 position = Vector2(20, 0)

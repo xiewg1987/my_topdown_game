@@ -6,6 +6,7 @@ extends Node2D
 
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var pivot: Node2D = %Pivot
+@onready var fire_position: Marker2D = %FirePosition
 
 
 func use_weapon() -> void:

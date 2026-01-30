@@ -1,3 +1,5 @@
+res://assets/sprites/weapons
+res://scenes/bullet/bullet_pistol
 res://scenes/ui/description_panel
 C:/Users/xiewe/Downloads
 res://scenes/ui/character_selection
@@ -18,5 +20,3 @@ res://autoloads/cursor
 res://scenes/weapons
 res://custom_resource/weapons/weapon_pistol
 res://autoloads/event_bus
-res://scenes/arena
-res://components/health_component

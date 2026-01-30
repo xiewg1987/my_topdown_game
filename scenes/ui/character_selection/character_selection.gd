@@ -44,18 +44,8 @@ func load_selection_items() -> void:
 		weapon_card_instance.weapon_resource = weapon_resource
 
 
-func _on_play_button_pressed() -> void:
-	Transition.transition_to(ARENA_PATH)
-	SFXPlayer.play(sound_stream)
-
-
-func _on_back_button_pressed() -> void:
-	Transition.transition_to(MAIN_MENU_PATH)
-	SFXPlayer.play(sound_stream)
-
 
 func _on_player_card_pressed(player_resource: PlayerResource, selected_card: PlayerCard) -> void:
-	if not Global.selected_player and not Global.selected_weapon: return
 	SFXPlayer.play(sound_stream)
 	for card: PlayerCard in player_container.get_children():
 		card.selector.hide()
@@ -69,6 +59,17 @@ func _on_weapon_card_pressed(weapon_resource: WeaponResource, selected_card: Wea
 		card.selector.hide()
 	selected_card.selector.show()
 	Global.selected_weapon = weapon_resource
+
+
+func _on_play_button_pressed() -> void:
+	if not Global.selected_player and not Global.selected_weapon: return
+	Transition.transition_to(ARENA_PATH)
+	SFXPlayer.play(sound_stream)
+
+
+func _on_back_button_pressed() -> void:
+	Transition.transition_to(MAIN_MENU_PATH)
+	SFXPlayer.play(sound_stream)
 
 
 func _on_button_mouse_entered() -> void:
