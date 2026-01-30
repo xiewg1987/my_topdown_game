@@ -32,7 +32,6 @@ func _ready() -> void:
 	# 国际化配置
 	TranslationServer.set_locale("zh")
 	Cursor.sprite.texture = meun_cursor
-	Global.load_date()
 	update_audio_bus(BusType.MUSIC, music_label, Global.settings.music)
 	update_audio_bus(BusType.SFX, sfx_label, Global.settings.sfx)
 	update_fullscreen(Global.settings.fullscreen)

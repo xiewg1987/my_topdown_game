@@ -33,6 +33,9 @@ var selected_player: PlayerResource
 var selected_weapon: WeaponResource
 
 
+func _ready() -> void:
+	load_date()
+
 
 func get_player_scene() -> PackedScene:
 	return player_scene[selected_player.player_id]

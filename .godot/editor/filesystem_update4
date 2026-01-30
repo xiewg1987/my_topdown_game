@@ -16,3 +16,7 @@ res://custom_resource/weapons/weapon_shotgun/weapon_shotgun.tres
 res://custom_resource/weapons/weapon_snipe/weapon_snipe.tres
 res://custom_resource/weapons/weapon_submachine_gun/weapon_submachine_gun.tres
 res://custom_resource/weapons/weapon_uzi/weapon_uzi.tres
+res://scenes/ui/main_menu/main_menu.tscn
+res://theme/TextureButton/reddish_orange.tres
+res://scenes/ui/main_menu/main_menu.gd
+res://autoloads/global/global.gd
