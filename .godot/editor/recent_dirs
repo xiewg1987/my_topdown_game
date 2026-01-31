@@ -1,3 +1,5 @@
+res://scenes/weapons/melee/weapon_melee_sword
+res://scenes/weapons/melee
 res://assets/sprites/interface/Tilemap
 res://assets/sprites/weapons
 res://scenes/bullets/bullet_uzi
@@ -18,5 +20,3 @@ res://scenes/weapons/range/weapon_range_submachine_gun
 res://scenes/weapons/range/weapon_range_snipe
 res://scenes/weapons/range/weapon_range_rifles
 res://scenes/weapons/range/weapon_range_machine_gun
-res://custom_resource/weapons/weapon_shotgun
-res://custom_resource/weapons/weapon_machine_gun

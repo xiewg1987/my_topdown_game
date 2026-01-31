@@ -24,3 +24,6 @@ res://autoloads/cursor/cursor.tscn
 res://theme/TextureButton/reddish_orange.tres
 res://autoloads/cursor/cursor.gd
 res://autoloads/global/global.gd
+res://scenes/weapons/melee/weapon_melee_base.tscn
+res://scenes/weapons/melee/weapon_melee_sword/weapon_melee_sword.tscn
+res://scenes/weapons/melee/weapon_melee.gd

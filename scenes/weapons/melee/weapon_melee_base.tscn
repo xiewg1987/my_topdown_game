@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://duvn72byqnv3j"]
+
+[ext_resource type="Script" uid="uid://d0o2seogtkivk" path="res://scenes/weapons/melee/weapon_melee.gd" id="1_hnprs"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kwg6y"]
+
+[node name="WeaponMeleeBase" type="Node2D"]
+script = ExtResource("1_hnprs")
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+
+[node name="Hitbox" type="Area2D" parent="Pivot"]
+
+[node name="SlashParticle" type="GPUParticles2D" parent="Pivot"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kwg6y")
+}
+
+[node name="Cooldown" type="Timer" parent="."]
