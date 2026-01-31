@@ -2,10 +2,12 @@ extends Node
 
 var save_setting_path := "user://settings.json"
 
+const EXPLOSION_EFFECT = preload("uid://jmfg8wkw46yc")
+
 ## 配置字典
 var settings: Dictionary = {
 	"music": true,
-	"sfx": false,
+	"sfx": true,
 	"fullscreen": false
 }
 
@@ -37,6 +39,12 @@ var selected_weapon: WeaponResource
 
 func _ready() -> void:
 	load_date()
+
+
+func create_explosion(position:Vector2) -> void:
+	var explosion: ExplosionEffect = EXPLOSION_EFFECT.instantiate() as ExplosionEffect
+	get_tree().root.add_child(explosion)
+	explosion.position = position
 
 
 func get_player_scene() -> PackedScene:

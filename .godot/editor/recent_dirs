@@ -1,9 +1,11 @@
+res://assets/sprites/interface
+res://scenes/effect/explosion_effect
+res://assets/sprites/weapons
 res://custom_resource/weapons/melee/
 res://scenes/weapons/melee/weapon_melee_axe
 res://scenes/weapons/melee
 res://scenes/weapons/melee/weapon_melee_sword
 res://assets/sprites/interface/Tilemap
-res://assets/sprites/weapons
 res://scenes/bullets/bullet_uzi
 res://scenes/bullets
 res://scenes/bullets/bullet_shotgun
@@ -18,5 +20,3 @@ res://scenes/ui/character_selection
 res://scenes/ui/weapon/weapon_card
 res://scenes/weapons/range/weapon_range_uzi
 res://scenes/weapons/range
-res://scenes/weapons/range/weapon_range_submachine_gun
-res://scenes/weapons/range/weapon_range_snipe
