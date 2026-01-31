@@ -10,3 +10,8 @@ res://scenes/ui/character_selection/character_selection.gd
 res://scenes/weapons/melee/weapon_melee.gd
 res://scenes/weapons/weapon.gd
 res://scenes/weapons/range/weapon_range.gd
+res://scenes/effect/explosion_effect/explosion_effect.tscn
+res://scenes/effect/explosion_effect/explosion_effect.gd
+res://scenes/bullets/bullet_base.tscn
+res://scenes/bullets/bullet.gd
+res://scenes/arena/arena.tscn

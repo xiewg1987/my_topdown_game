@@ -6,6 +6,7 @@ extends Weapon
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 var can_use: bool = true
+var entitits: Array[Node2D]
 
 func _ready() -> void:
 	cooldown.wait_time = weapon_resource.cooldown
@@ -24,8 +25,18 @@ func use_weapon() -> void:
 	animation_player.play("melee/slash")
 	slash.global_rotation = pivot.global_rotation
 	slash.emitting = true
+	print(entitits)
 
 
 func _on_cooldown_timeout() -> void:
 	can_use = true
 	animation_player.play("melee/idle")
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if not is_instance_valid(body): return # 检查当前节点是否有效
+	entitits.append(body)
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if not is_instance_valid(body): return # 检查当前节点是否有效
+	entitits.erase(body)

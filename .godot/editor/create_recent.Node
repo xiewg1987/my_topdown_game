@@ -1,14 +1,14 @@
 CollisionShape2D
+Sprite2D
+StaticBody2D
+AnimatedSprite2D
 Weapon
 Timer
 AnimationPlayer
 GPUParticles2D
 Area2D
-Sprite2D
 Node2D
-AnimatedSprite2D
 Arena
 Label
 NinePatchRect
 TextureRect
-HBoxContainer
