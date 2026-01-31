@@ -20,7 +20,7 @@ var player_scene: Dictionary[String, PackedScene] = {
 
 
 var weapons_scene: Dictionary[String, PackedScene] = {
-	"UZi": preload("uid://br5gwb7lsuxv7"),
+	"Uzi": preload("uid://br5gwb7lsuxv7"),
 	"Pistol": preload("uid://23bdolwaskmn"),
 	"Rifles": preload("uid://b7u68q5ek6isv"),
 	"Shotgun": preload("uid://bd853itgqoqts"),

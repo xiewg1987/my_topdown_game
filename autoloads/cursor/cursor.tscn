@@ -7,3 +7,5 @@ script = ExtResource("1_mgxgo")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+
+[connection signal="texture_changed" from="Sprite" to="." method="_on_sprite_texture_changed"]
