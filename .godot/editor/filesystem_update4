@@ -27,3 +27,7 @@ res://autoloads/global/global.gd
 res://scenes/weapons/melee/weapon_melee_base.tscn
 res://scenes/weapons/melee/weapon_melee_sword/weapon_melee_sword.tscn
 res://scenes/weapons/melee/weapon_melee.gd
+res://custom_resource/weapons/melee/weapon_sword.tres
+res://scenes/weapons/weapon.gd
+res://scenes/weapons/melee/weapon_melee_axe/weapon_melee_axe.tscn
+res://custom_resource/weapons/melee/weapon_axe.tres

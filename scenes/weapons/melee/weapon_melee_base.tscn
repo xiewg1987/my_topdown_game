@@ -1,8 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://duvn72byqnv3j"]
+[gd_scene load_steps=4 format=3 uid="uid://duvn72byqnv3j"]
 
 [ext_resource type="Script" uid="uid://d0o2seogtkivk" path="res://scenes/weapons/melee/weapon_melee.gd" id="1_hnprs"]
 
+[sub_resource type="Animation" id="Animation_immbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kwg6y"]
+_data = {
+&"RESET": SubResource("Animation_immbn")
+}
 
 [node name="WeaponMeleeBase" type="Node2D"]
 script = ExtResource("1_hnprs")
@@ -10,14 +40,22 @@ script = ExtResource("1_hnprs")
 [node name="Pivot" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+unique_name_in_owner = true
 
 [node name="Hitbox" type="Area2D" parent="Pivot"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Hitbox"]
+
 [node name="SlashParticle" type="GPUParticles2D" parent="Pivot"]
+unique_name_in_owner = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_kwg6y")
 }
 
 [node name="Cooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
