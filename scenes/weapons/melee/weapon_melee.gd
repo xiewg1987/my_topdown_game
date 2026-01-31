@@ -27,6 +27,7 @@ func use_weapon() -> void:
 		Global.create_demage_text(weapon_resource.demage, enemy.global_position)
 	slash.global_rotation = pivot.global_rotation
 	slash.emitting = true
+	print(entitits)
 
 
 func _on_cooldown_timeout() -> void:
