@@ -3,6 +3,7 @@ extends Weapon
 
 const TILT_RANGE = 90 ## 武器翻转角度
 
+@onready var fire_position: Marker2D = %FirePosition
 
 var direction: Vector2
 var coolfown: float

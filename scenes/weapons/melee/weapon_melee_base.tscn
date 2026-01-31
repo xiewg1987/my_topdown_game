@@ -1,6 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://duvn72byqnv3j"]
+[gd_scene load_steps=7 format=3 uid="uid://duvn72byqnv3j"]
 
 [ext_resource type="Script" uid="uid://d0o2seogtkivk" path="res://scenes/weapons/melee/weapon_melee.gd" id="1_hnprs"]
+[ext_resource type="Texture2D" uid="uid://d2akrrxsegdf4" path="res://assets/sprites/weapons/swordslash.png" id="2_kwg6y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kwg6y"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vn62d"]
+particle_flag_disable_z = true
+spread = 0.0
+initial_velocity_min = 350.0
+initial_velocity_max = 350.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.7
+anim_speed_min = 1.0
+anim_speed_max = 1.0
 
 [sub_resource type="Animation" id="Animation_immbn"]
 length = 0.001
@@ -38,9 +55,11 @@ _data = {
 script = ExtResource("1_hnprs")
 
 [node name="Pivot" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
 unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
 
 [node name="Hitbox" type="Area2D" parent="Pivot"]
 
@@ -48,6 +67,15 @@ unique_name_in_owner = true
 
 [node name="SlashParticle" type="GPUParticles2D" parent="Pivot"]
 unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_kwg6y")
+position = Vector2(7, 0)
+emitting = false
+amount = 1
+texture = ExtResource("2_kwg6y")
+lifetime = 0.09999999999999999
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_vn62d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

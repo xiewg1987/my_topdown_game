@@ -1,8 +1,11 @@
 class_name WeaponMelee
 extends Weapon
 
+@onready var cooldown: Timer = %Cooldown
+@onready var slash: GPUParticles2D = %SlashParticle
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
-var can_use: bool
+var can_use: bool = true
 
 func _ready() -> void:
 	cooldown.wait_time = weapon_resource.cooldown

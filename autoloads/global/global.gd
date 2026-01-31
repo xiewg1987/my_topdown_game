@@ -26,7 +26,9 @@ var weapons_scene: Dictionary[String, PackedScene] = {
 	"Shotgun": preload("uid://bd853itgqoqts"),
 	"Sniper": preload("uid://bhvdhklwqft3s"),
 	"MachineGun": preload("uid://bc8duq2j4gc2g"),
-	"SubmachineGun": preload("uid://luu61ow810kq")
+	"SubmachineGun": preload("uid://luu61ow810kq"),
+	"Sword": preload("uid://cp2qhf42hkeja"),
+	"Axe": preload("uid://drdalhkurttxy")
 }
 
 var selected_player: PlayerResource

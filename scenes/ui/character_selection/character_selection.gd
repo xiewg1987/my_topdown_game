@@ -62,7 +62,7 @@ func _on_weapon_card_pressed(weapon_resource: WeaponResource, selected_card: Wea
 
 
 func _on_play_button_pressed() -> void:
-	if not Global.selected_player and not Global.selected_weapon: return
+	if not Global.selected_player or not Global.selected_weapon: return
 	Transition.transition_to(ARENA_PATH)
 	SFXPlayer.play(sound_stream)
 
