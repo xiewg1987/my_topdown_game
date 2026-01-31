@@ -23,9 +23,10 @@ func use_weapon() -> void:
 	cooldown.start()
 	SFXPlayer.play(shoot_sound)
 	animation_player.play("melee/slash")
+	for enemy: Node2D in entitits:
+		Global.create_demage_text(weapon_resource.demage, enemy.global_position)
 	slash.global_rotation = pivot.global_rotation
 	slash.emitting = true
-	print(entitits)
 
 
 func _on_cooldown_timeout() -> void:

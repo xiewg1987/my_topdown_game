@@ -1,3 +1,4 @@
+res://scenes/extra
 res://assets/sprites/interface
 res://scenes/effect/explosion_effect
 res://assets/sprites/weapons
@@ -19,4 +20,3 @@ C:/Users/xiewe/Downloads
 res://scenes/ui/character_selection
 res://scenes/ui/weapon/weapon_card
 res://scenes/weapons/range/weapon_range_uzi
-res://scenes/weapons/range

@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	move_local_x(weapon_resource.bullet_speed * delta)
 
 
-func _on_body_entered(_body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	Global.create_explosion(global_position)
+	Global.create_demage_text(weapon_resource.demage, body.global_position)
 	queue_free()

@@ -15,3 +15,6 @@ res://scenes/effect/explosion_effect/explosion_effect.gd
 res://scenes/bullets/bullet_base.tscn
 res://scenes/bullets/bullet.gd
 res://scenes/arena/arena.tscn
+res://scenes/extra/damage_text.tscn
+res://scenes/extra/damage_text.gd
+res://scenes/weapons/range/weapon_range_base.tscn

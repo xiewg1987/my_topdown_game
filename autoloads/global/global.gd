@@ -3,6 +3,7 @@ extends Node
 var save_setting_path := "user://settings.json"
 
 const EXPLOSION_EFFECT = preload("uid://jmfg8wkw46yc")
+const DAMAGE_TEXT = preload("uid://c0tpbghu8sfq7")
 
 ## 配置字典
 var settings: Dictionary = {
@@ -42,9 +43,17 @@ func _ready() -> void:
 
 
 func create_explosion(position:Vector2) -> void:
-	var explosion: ExplosionEffect = EXPLOSION_EFFECT.instantiate() as ExplosionEffect
-	get_tree().root.add_child(explosion)
-	explosion.position = position
+	var explosion_instance: ExplosionEffect = EXPLOSION_EFFECT.instantiate()
+	get_tree().root.add_child(explosion_instance)
+	explosion_instance.position = position
+
+
+func create_demage_text(damage: float, position:Vector2) -> void:
+	var random_position = randf_range(0, TAU)
+	var damage_text_instance: DamageText = DAMAGE_TEXT.instantiate()
+	get_tree().root.add_child(damage_text_instance)
+	damage_text_instance.damgea = damage
+	damage_text_instance.global_position = position + Vector2.RIGHT.rotated(random_position) * 20 
 
 
 func get_player_scene() -> PackedScene:
