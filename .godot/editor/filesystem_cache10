@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1769867544
+::res://::1769867546
 icon.svg::CompressedTexture2D::399647507862200059::1769828563::1769828563::1::::<><><>0<>0<>ee299e097238c3d3cb0753e49c51bcfd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1769828563
 ::res://addons/DampedOscillator/::1769828563
@@ -199,8 +199,9 @@ transition.gd::GDScript::4658357622680563802::1769828563::0::1::::<>Node<><>0<>0
 transition.tscn::PackedScene::1922387093377088723::1769828563::0::1::::<><><>0<>0<><>::uid://b7msp7xkio74q::::res://autoloads/transition/transition.gd<>uid://bsn7g4dohd35j::::res://theme/gdshader/transition.gdshader
 ::res://components/::1769828563
 ::res://components/health_component/::1769828563
-health_component.gd::GDScript::4430912374289686757::1769828563::0::1::::HealthComponent<>Node2D<>res://assets/icon/heart-icon.svg<>0<>0<><>::
+health_component.gd::GDScript::4430912374289686757::1769828563::0::1::::HealthComponent<>Node2D<><>0<>0<><>::
 ::res://custom_resource/::1769828563
+::res://custom_resource/Level/::0
 ::res://custom_resource/player/::1769828563
 player_resource.gd::GDScript::3195676557529597243::1769828563::0::1::::PlayerResource<>Resource<><>0<>0<><>::
 ::res://custom_resource/player/player_bunny/::1769828563
@@ -235,7 +236,7 @@ weapon_uzi.tres::Resource/WeaponResource::6365771240750533509::1769840138::0::1:
 text.csv::Translation::101264647033981939::1769828563::1769828612::1::::<><><>0<>0<>ba9e1c6646cd927a2e2b0d2fecba512e<>res://language/text.en.translation<*>res://language/text.zh.translation::
 text.en.translation::OptimizedTranslation::4629993988264587506::1769828612::0::1::::<><><>0<>0<><>::
 text.zh.translation::OptimizedTranslation::2648334095467127728::1769828612::0::1::::<><><>0<>0<><>::
-::res://scenes/::1769867116
+::res://scenes/::1769914877
 ::res://scenes/arena/::1769867100
 arena.gd::GDScript::2818285660240720177::1769828563::0::1::::Arena<>Node2D<><>0<>0<><>::
 arena.tscn::PackedScene::5359384718635218803::1769867100::0::1::::<><><>0<>0<><>::uid://dy8e3xkc5qdbp::::res://assets/sprites/interface/Tilemap/tilemap_packed.png<>uid://bgfg0ustgdluf::::res://scenes/arena/arena.gd<>uid://b5o6og4r1humu::::res://assets/sprites/weapons/tiles/tile_0025.png<>uid://ccab6or5n1nai::::res://assets/sprites/players/tile_0000.png<>uid://dxp7naqy4gvku::::res://assets/sprites/interface/bar_under.png<>uid://bvr7in7eey6cb::::res://assets/sprites/interface/bar_over.png<>uid://cf2ypr83psjfm::::res://assets/sprites/interface/bar_health.png<>uid://djtqrhxpxpjeg::::res://assets/sprites/interface/bar_mana.png<>uid://clv0dnuyxhqg8::::res://assets/sprites/interface/Button_Blue.png
@@ -275,6 +276,10 @@ player_cat.tscn::PackedScene::8718283813764107731::1769828563::0::1::::<><><>0<>
 player_dog.tscn::PackedScene::1224402836072800600::1769828563::0::1::::<><><>0<>0<><>::uid://dnskrt4k5ldbr::::res://scenes/player/player_base.tscn<>uid://16tnpwkquccc::::res://custom_resource/player/player_dog/palyer_dog.tres<>uid://cnttucjccgouq::::res://assets/sprites/players/tile_0003.png<>uid://ccab6or5n1nai::::res://assets/sprites/players/tile_0000.png<>uid://cemiyrcpjly84::::res://assets/sprites/players/tile_0001.png<>uid://cyey76bu4l4v5::::res://assets/sprites/players/tile_0002.png
 ::res://scenes/player/player_mouse/::1769828563
 player_mouse.tscn::PackedScene::7809037311456404989::1769828563::0::1::::<><><>0<>0<><>::uid://dnskrt4k5ldbr::::res://scenes/player/player_base.tscn<>uid://b3ao4n36yvjd0::::res://assets/sprites/players/tile_0008.png<>uid://behu0yellfs5f::::res://assets/sprites/players/tile_0011.png<>uid://bn0h734k3dvxl::::res://custom_resource/player/player_mouse/player_mouse.tres<>uid://d1ufpewy5lo08::::res://assets/sprites/players/tile_0009.png<>uid://cjibmi15mblpv::::res://assets/sprites/players/tile_0010.png
+::res://scenes/room/::1769914915
+room.gd::GDScript::5399393632155627257::1769914915::0::1::::room<>Node2D<><>0<>0<><>::
+::res://scenes/room/level_one_room./::1769918081
+level_one_room.tscn::PackedScene::6759840468993851670::1769918081::0::1::::<><><>0<>0<><>::uid://ci6rhvile1ddx::::res://scenes/room/room.gd<>uid://bulmmqywxne06::::res://theme/tileset/room/level_one_room.tres
 ::res://scenes/ui/::1769828563
 ::res://scenes/ui/banckground/::1769828563
 banckground.tscn::PackedScene::6803764967310410881::1769828563::0::1::::<><><>0<>0<><>::uid://cpkigu5f3e85r::::res://theme/gdshader/background.gdshader<>uid://bjnh3sonwurje::::res://assets/sprites/background_tiled.png
@@ -304,9 +309,9 @@ weapon_melee_base.tscn::PackedScene::8607238743773752893::1769867100::0::1::::<>
 weapon_melee_axe.tscn::PackedScene::8358685553964677786::1769863060::0::1::::<><><>0<>0<><>::uid://duvn72byqnv3j::::res://scenes/weapons/melee/weapon_melee_base.tscn<>uid://hm683tll4af4::::res://assets/sprites/weapons/tiles/tile_0009.png<>uid://b4k47b4aku6a5::::res://custom_resource/weapons/melee/weapon_axe.tres<>uid://bpphir6sj7acr::::res://assets/sounds/slash.ogg
 ::res://scenes/weapons/melee/weapon_melee_sword/::1769863072
 weapon_melee_sword.tscn::PackedScene::5882396502410487074::1769863072::0::1::::<><><>0<>0<><>::uid://duvn72byqnv3j::::res://scenes/weapons/melee/weapon_melee_base.tscn<>uid://brhbeo7e53hds::::res://custom_resource/weapons/melee/weapon_sword.tres<>uid://bajyn0iqwus2x::::res://assets/sprites/weapons/tiles/tile_0018.png<>uid://bpphir6sj7acr::::res://assets/sounds/slash.ogg
-::res://scenes/weapons/range/::1769866851
-weapon_range.gd::GDScript::7952287127128650758::1769862838::0::1::::WeaponRange<>Weapon<><>0<>0<><>::
-weapon_range_base.tscn::PackedScene::1787303466529692936::1769866851::0::1::::<><><>0<>0<><>::uid://dlkfaiivuls5k::::res://scenes/weapons/range/weapon_range.gd
+::res://scenes/weapons/range/::1769914888
+weapon_range.gd::GDScript::7952287127128650758::1769914888::0::1::::WeaponRange<>Weapon<><>0<>0<><>::
+weapon_range_base.tscn::PackedScene::1787303466529692936::1769867549::0::1::::<><><>0<>0<><>::uid://dlkfaiivuls5k::::res://scenes/weapons/range/weapon_range.gd
 ::res://scenes/weapons/range/weapon_range_machine_gun/::1769840138
 weapon_range_machine_gun.tscn::PackedScene::2595141586240768900::1769840138::0::1::::<><><>0<>0<><>::uid://0p1vk1iqtyia::::res://scenes/weapons/range/weapon_range_base.tscn<>uid://bcdx2d0wr0d8c::::res://custom_resource/weapons/range/weapon_machine_gun/weapon_machine_gun.tres<>uid://cbcjtrnb2c1xg::::res://assets/sounds/shoot-a.ogg
 ::res://scenes/weapons/range/weapon_range_pistol/::1769840138
@@ -324,7 +329,7 @@ weapon_range_uzi.tscn::PackedScene::3641966050065699942::1769840138::0::1::::<><
 ::res://scenes_test/::1769828563
 ::res://scenes_test/test_scens_transition/::1769828563
 test_scens_transition.tscn::PackedScene::8809205181704612023::1769828563::0::1::::<><><>0<>0<><>::uid://d11l46p8hxwne::::res://theme/extra/font/font_48.tres
-::res://theme/::1769828563
+::res://theme/::1769915460
 base_theme.tres::Theme::7354528545334559412::1769828563::0::1::::<><><>0<>0<><>::
 ::res://theme/audio/::1769828563
 default_bus_layout.tres::AudioBusLayout::2586731759597147801::1769828563::0::1::::<><><>0<>0<><>::
@@ -334,9 +339,12 @@ random_sound.tres::AudioStreamRandomizer::1418408987056994356::1769828563::0::1:
 ::res://theme/extra/font/::1769828563
 font_16.tres::LabelSettings::8220734997011664442::1769828563::0::1::::<><><>0<>0<><>::uid://cmkei0r5t77jr::::res://assets/font/Lilian.ttf
 font_48.tres::LabelSettings::9038567135122946334::1769828563::0::1::::<><><>0<>0<><>::uid://cmkei0r5t77jr::::res://assets/font/Lilian.ttf
-::res://theme/gdshader/::1769861691
-background.gdshader::Shader::5846815347278773009::1769861691::0::1::::<><><>0<>0<><>::
-transition.gdshader::Shader::3678611966969586301::1769861691::0::1::::<><><>0<>0<><>::
+::res://theme/gdshader/::1769867549
+background.gdshader::Shader::5846815347278773009::1769867549::0::1::::<><><>0<>0<><>::
+transition.gdshader::Shader::3678611966969586301::1769867549::0::1::::<><><>0<>0<><>::
 ::res://theme/TextureButton/::1769834321
 graphite.tres::AtlasTexture::1753055428395648972::1769828563::0::1::::<><><>0<>0<><>::uid://dy8e3xkc5qdbp::::res://assets/sprites/interface/Tilemap/tilemap_packed.png
 reddish_orange.tres::AtlasTexture::844430230264059649::1769834321::0::1::::<><><>0<>0<><>::
+::res://theme/tileset/::1769915468
+::res://theme/tileset/room/::1769915470
+level_one_room.tres::TileSet::3813656623668202393::1769915470::0::1::::<><><>0<>0<><>::uid://b6i0q5i8rwf7l::::res://assets/sprites/tiles/tilemap_packed.png

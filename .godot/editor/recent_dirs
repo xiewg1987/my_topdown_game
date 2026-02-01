@@ -1,3 +1,4 @@
+res://custom_resource/level/one/
 res://theme/tileset/room
 res://assets/sprites/tiles
 res://scenes/room
@@ -19,5 +20,4 @@ res://scenes/bullets/bullet_machine_gun
 res://scenes/bullets/bullet_sniper
 res://scenes/bullets/bullet_submachine_gun
 res://scenes/bullets/bullet_pistol
-res://scenes/ui/description_panel
 C:/Users/xiewe/Downloads

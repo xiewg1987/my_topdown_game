@@ -1,3 +1,4 @@
+LevelResource
 WeaponResource
 PlayerResource
 Theme
