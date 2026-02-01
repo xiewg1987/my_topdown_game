@@ -1,3 +1,7 @@
+res://theme/tileset/room
+res://assets/sprites/tiles
+res://scenes/room
+res://scenes/room/level_one_room.
 res://scenes/extra
 res://assets/sprites/interface
 res://scenes/effect/explosion_effect
@@ -17,6 +21,3 @@ res://scenes/bullets/bullet_submachine_gun
 res://scenes/bullets/bullet_pistol
 res://scenes/ui/description_panel
 C:/Users/xiewe/Downloads
-res://scenes/ui/character_selection
-res://scenes/ui/weapon/weapon_card
-res://scenes/weapons/range/weapon_range_uzi
