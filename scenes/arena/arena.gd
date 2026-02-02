@@ -19,7 +19,8 @@ func _ready() -> void:
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
 	generate_level_layout()
 	select_special_rooms()
-	load_game_selection()
+	# 临时注释方便调试
+	# load_game_selection()
 
 
 func generate_level_layout() -> void:
@@ -44,7 +45,21 @@ func generate_level_layout() -> void:
 
 
 func select_special_rooms() -> void:
-	pass
+	start_room_coord = Vector2.ZERO
+	end_room_coord = find_farthest_room()
+	print("起始房间：：：--->", start_room_coord)
+	print("结束房间：：：--->", end_room_coord)
+
+
+func find_farthest_room() -> Vector2i:
+	var farthest_room_coord := start_room_coord
+	var max_dist := 0.0
+	for room_coord: Vector2i in grid.keys():
+		var dist = start_room_coord.distance_to(room_coord)
+		if dist > max_dist:
+			max_dist = dist
+			farthest_room_coord = room_coord
+	return farthest_room_coord
 
 
 func load_game_selection() -> void:
