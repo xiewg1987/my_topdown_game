@@ -11,12 +11,14 @@ extends Node2D
 
 var start_room_coord: Vector2i
 var end_room_coord: Vector2i
+var grid_cell_size: Vector2i
 var grid: Dictionary[Vector2i, LevelRoom] = {}
 var directions := [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
 
 
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
+	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
 	generate_level_layout() 
 	# 建议将select_special_rooms放在generate_level_layout内
@@ -53,7 +55,7 @@ func create_rooms() -> void:
 	for room_coord: Vector2i in grid.keys():
 		var room_instance: LevelRoom = level_resource.room_scene.instantiate() as LevelRoom
 		add_child(room_instance)
-		room_instance.position = room_coord * level_resource.room_size
+		room_instance.position = room_coord * grid_cell_size
 		grid[room_coord] = room_instance
 		cennect_rooms(room_coord, room_instance)
 	print("房间创建完毕...")
@@ -71,19 +73,22 @@ func create_corridors() -> void:
 	print("开始创建过道...")
 	for room_coord:Vector2i in grid.keys():
 		var room_instance = grid[room_coord]
-		var room_position = room_instance.position
 		for direction: Vector2i in directions:
 			var neighbor_coord = room_coord + direction
 			if grid.has(neighbor_coord):
+				print("neighbor_coord::==", grid.has(neighbor_coord), "---", neighbor_coord)
 				var corridor: Node2D
-				var neghbor_position = grid[neighbor_coord].position
-				if direction == Vector2i.LEFT or direction == Vector2i.RIGHT:
+				var corridor_position: Vector2i
+				if direction == Vector2i.RIGHT:
 					corridor = level_resource.h_corridor.instantiate()
-				elif direction == Vector2i.UP or direction == Vector2i.DOWN:
+					corridor_position = room_instance.position + Vector2(grid_cell_size.x / 2.0, 0.0)
+					add_child(corridor)
+					corridor.position = corridor_position
+				elif direction == Vector2i.DOWN:
 					corridor = level_resource.v_corridor.instantiate()
-				if not corridor: return
-				add_child(corridor)
-				corridor.position = (room_position + neghbor_position) / 2.0
+					corridor_position = room_instance.position + Vector2(0.0, grid_cell_size.y / 2.0)
+					add_child(corridor)
+					corridor.position = corridor_position
 	print("过道创建完毕...")
 
 func select_special_rooms() -> void:
