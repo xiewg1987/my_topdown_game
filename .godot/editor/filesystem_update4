@@ -1,9 +1,7 @@
-res://scenes/weapons/range/weapon_range_base.tscn
+res://scenes/arena/arena.tscn
 res://theme/gdshader/transition.gdshader
 res://theme/gdshader/background.gdshader
-res://scenes/weapons/range/weapon_range.gd
-res://scenes/room/level_one_room./level_one_room.tscn
+res://theme/tileset/room/level_one_room.tres
+res://scenes/room/level_one_room/level_one_room.tscn
 res://scenes/room/room.gd
-res://custom_resource/level/level_resourec.gd
-res://custom_resource/level/level_store_resource.gd
-res://custom_resource/level/one/level_one.tres
+res://scenes/arena/arena.gd
