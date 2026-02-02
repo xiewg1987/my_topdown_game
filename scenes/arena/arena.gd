@@ -9,6 +9,8 @@ extends Node2D
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var mana_bar: TextureProgressBar = %ManaBar
 
+var player_instance: Player
+var current_room: LevelRoom
 var start_room_coord: Vector2i
 var end_room_coord: Vector2i
 var grid_cell_size: Vector2i
@@ -18,14 +20,21 @@ var directions := [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
 
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
+	EventBus.rooms.on_player_room_entered.connect(_on_player_room_entered)
 	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
+	
 	generate_level_layout() 
 	# 建议将select_special_rooms放在generate_level_layout内
 	# select_special_rooms需要等待布局完成后执行
 	# 临时注释方便调试
 	load_game_selection()
 
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		current_room.unlock_room()
+		current_room.is_cleared = true
 
 func generate_level_layout() -> void:
 	var current_coord := Vector2i.ZERO
@@ -59,6 +68,7 @@ func create_rooms() -> void:
 		grid[room_coord] = room_instance
 		cennect_rooms(room_coord, room_instance)
 	print("房间创建完毕...")
+	grid[Vector2i.ZERO].is_cleared = true
 	create_corridors()
 
 
@@ -76,7 +86,6 @@ func create_corridors() -> void:
 		for direction: Vector2i in directions:
 			var neighbor_coord = room_coord + direction
 			if grid.has(neighbor_coord):
-				print("neighbor_coord::==", grid.has(neighbor_coord), "---", neighbor_coord)
 				var corridor: Node2D
 				var corridor_position: Vector2i
 				if direction == Vector2i.RIGHT:
@@ -110,10 +119,16 @@ func find_farthest_room() -> Vector2i:
 
 
 func load_game_selection() -> void:
-	var player_instance := Global.get_player_scene().instantiate() as Player
+	player_instance = Global.get_player_scene().instantiate() as Player
 	add_child(player_instance)
 	player_instance.weapon_controller.equip_weapon()
 	player_instance.global_position = grid[Vector2i.ZERO].player_spawn_ponsition.global_position
+
+
+func _on_player_room_entered(room: LevelRoom) -> void:
+	current_room = room
+	if not room.is_cleared:
+		room.lock_room()
 
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:

@@ -1,14 +1,14 @@
+CollisionShape2D
+Area2D
 TileMapLayer
 Marker2D
 Camera2D
 Node2D
 Label
 Control
-CollisionShape2D
 Sprite2D
 StaticBody2D
 AnimatedSprite2D
 Weapon
 Timer
 AnimationPlayer
-GPUParticles2D

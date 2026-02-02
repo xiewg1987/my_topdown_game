@@ -8,3 +8,7 @@ res://scenes/arena/arena.tscn
 res://scenes/arena/arena.gd
 res://scenes/room/level_one_room/level_one_h_corridor.tscn
 res://scenes/room/room.gd
+res://scenes/weapons/range/weapon_range_base.tscn
+res://autoloads/event_bus/event_bus.gd
+res://autoloads/event_bus/rooms/rooms_signal.gd
+res://scenes/player/player_base.tscn

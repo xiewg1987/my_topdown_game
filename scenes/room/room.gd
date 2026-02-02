@@ -23,15 +23,9 @@ var is_cleared: bool
 
 
 func _ready() -> void:
-	#close_all_walls()
+	close_all_walls()
 	register_tiles()
 
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		lock_room()
-	if event.is_action_pressed("ui_cancel"):
-		unlock_room()
 
 func register_tiles() -> void:
 	for tile in tile_data.get_used_cells():
@@ -59,3 +53,8 @@ func open_well(direction: Vector2i) -> void:
 func close_all_walls() -> void:
 	for wall_key: Vector2i in room_walls:
 		room_walls[wall_key].enabled = true
+
+
+func _on_player_detector_body_entered(_body: Node2D) -> void:
+	EventBus.rooms.emit_on_player_room_entered(self)
+		
