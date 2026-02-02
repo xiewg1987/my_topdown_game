@@ -6,3 +6,5 @@ res://scenes/room/level_one_room/level_one_room.tscn
 res://scenes/room/room.gd
 res://scenes/arena/arena.gd
 res://custom_resource/level/level_resourec.gd
+res://scenes/weapons/melee/weapon_melee_base.tscn
+res://scenes/weapons/melee/weapon_melee.gd
