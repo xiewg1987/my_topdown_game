@@ -1,13 +1,14 @@
 class_name LevelRoom
 extends Node2D
 
-
+@onready var player_spawn_ponsition: Marker2D = %PlayerSpawnPonsition
 @onready var room_walls: Dictionary[Vector2i, TileMapLayer] = {
 	Vector2i.UP: %WallsUp,
 	Vector2i.DOWN: %WallsDown,
 	Vector2i.LEFT: %WallsLeft,
 	Vector2i.RIGHT: %WallsRight
 }
+
 
 
 func _ready() -> void:

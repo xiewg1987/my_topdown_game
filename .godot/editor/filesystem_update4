@@ -7,3 +7,4 @@ res://custom_resource/level/one/level_one.tres
 res://scenes/arena/arena.tscn
 res://scenes/arena/arena.gd
 res://scenes/room/level_one_room/level_one_h_corridor.tscn
+res://scenes/room/room.gd

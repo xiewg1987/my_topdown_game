@@ -24,7 +24,7 @@ func _ready() -> void:
 	# 建议将select_special_rooms放在generate_level_layout内
 	# select_special_rooms需要等待布局完成后执行
 	# 临时注释方便调试
-	#load_game_selection()
+	load_game_selection()
 
 
 func generate_level_layout() -> void:
@@ -113,6 +113,7 @@ func load_game_selection() -> void:
 	var player_instance := Global.get_player_scene().instantiate() as Player
 	add_child(player_instance)
 	player_instance.weapon_controller.equip_weapon()
+	player_instance.global_position = grid[Vector2i.ZERO].player_spawn_ponsition.global_position
 
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:
