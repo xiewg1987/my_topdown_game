@@ -1,7 +1,16 @@
 class_name LevelRoom
 extends Node2D
 
+@onready var tile_data: TileMapLayer = %TileData
 @onready var player_spawn_ponsition: Marker2D = %PlayerSpawnPonsition
+
+@onready var room_doors: Dictionary[Vector2i, TileMapLayer] = {
+	Vector2i.UP: %DoorsUp,
+	Vector2i.DOWN: %DoorsDown,
+	Vector2i.LEFT: %DoorsLeft,
+	Vector2i.RIGHT: %DoorsRight
+}
+
 @onready var room_walls: Dictionary[Vector2i, TileMapLayer] = {
 	Vector2i.UP: %WallsUp,
 	Vector2i.DOWN: %WallsDown,
@@ -9,10 +18,37 @@ extends Node2D
 	Vector2i.RIGHT: %WallsRight
 }
 
+var tiles: Array[Vector2i]
+var is_cleared: bool
 
 
 func _ready() -> void:
-	close_all_walls()
+	#close_all_walls()
+	register_tiles()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		lock_room()
+	if event.is_action_pressed("ui_cancel"):
+		unlock_room()
+
+func register_tiles() -> void:
+	for tile in tile_data.get_used_cells():
+		tiles.append(tile)
+
+
+func lock_room() -> void:
+	for direction: Vector2i in room_doors:
+		var wall = room_walls[direction]
+		var door = room_doors[direction]
+		if wall and not wall.enabled:
+			door.enabled = true
+
+
+func unlock_room() -> void:
+	for direction: Vector2i in room_doors:
+		room_doors[direction].enabled = false
 
 
 func open_well(direction: Vector2i) -> void:
