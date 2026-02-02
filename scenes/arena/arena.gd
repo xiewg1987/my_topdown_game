@@ -43,19 +43,21 @@ func generate_level_layout() -> void:
 		if not grid.has(next_coord):
 			grid[next_coord] = null
 	print("布局已生成：：：--->", grid.keys())
-	select_special_rooms()
 	create_rooms()
+	select_special_rooms()
+
 
 
 func create_rooms() -> void:
-	print("创建房间...")
+	print("开始创建房间...")
 	for room_coord: Vector2i in grid.keys():
 		var room_instance: LevelRoom = level_resource.room_scene.instantiate() as LevelRoom
 		add_child(room_instance)
 		room_instance.position = room_coord * level_resource.room_size
 		grid[room_coord] = room_instance
 		cennect_rooms(room_coord, room_instance)
-		await get_tree().create_timer(0.5).timeout
+	print("房间创建完毕...")
+	create_corridors()
 
 
 func cennect_rooms(room_coord: Vector2i, room_instance: LevelRoom) -> void:
@@ -64,6 +66,25 @@ func cennect_rooms(room_coord: Vector2i, room_instance: LevelRoom) -> void:
 		if grid.has(neighbor_coord):
 			room_instance.open_well(direction)
 
+
+func create_corridors() -> void:
+	print("开始创建过道...")
+	for room_coord:Vector2i in grid.keys():
+		var room_instance = grid[room_coord]
+		var room_position = room_instance.position
+		for direction: Vector2i in directions:
+			var neighbor_coord = room_coord + direction
+			if grid.has(neighbor_coord):
+				var corridor: Node2D
+				var neghbor_position = grid[neighbor_coord].position
+				if direction == Vector2i.LEFT or direction == Vector2i.RIGHT:
+					corridor = level_resource.h_corridor.instantiate()
+				elif direction == Vector2i.UP or direction == Vector2i.DOWN:
+					corridor = level_resource.v_corridor.instantiate()
+				if not corridor: return
+				add_child(corridor)
+				corridor.position = (room_position + neghbor_position) / 2.0
+	print("过道创建完毕...")
 
 func select_special_rooms() -> void:
 	start_room_coord = Vector2.ZERO

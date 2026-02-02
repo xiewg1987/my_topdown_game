@@ -1,10 +1,9 @@
-res://scenes/arena/arena.tscn
-res://theme/gdshader/transition.gdshader
-res://theme/gdshader/background.gdshader
-res://theme/tileset/room/level_one_room.tres
 res://scenes/room/level_one_room/level_one_room.tscn
-res://scenes/room/room.gd
-res://scenes/arena/arena.gd
+res://theme/gdshader/transition.gdshader
+res://theme/tileset/room/level_one_room.tres
+res://theme/gdshader/background.gdshader
 res://custom_resource/level/level_resourec.gd
-res://scenes/weapons/melee/weapon_melee_base.tscn
-res://scenes/weapons/melee/weapon_melee.gd
+res://custom_resource/level/one/level_one.tres
+res://scenes/arena/arena.tscn
+res://scenes/arena/arena.gd
+res://scenes/room/level_one_room/level_one_h_corridor.tscn
