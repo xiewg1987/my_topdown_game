@@ -7,3 +7,7 @@ res://scenes/props/props_base.gd
 res://scenes/player/player_base.tscn
 res://scenes/arena/arena.tscn
 res://scenes/room/level_one_room/level_one_room.tscn
+res://custom_resource/level/level_resourec.gd
+res://custom_resource/level/one/level_one.tres
+res://scenes/room/room.gd
+res://scenes/arena/arena.gd

@@ -65,6 +65,7 @@ func create_rooms() -> void:
 	for room_coord: Vector2i in grid.keys():
 		var room_instance: LevelRoom = level_resource.room_scene.instantiate() as LevelRoom
 		add_child(room_instance)
+		room_instance.crete_props(level_resource)
 		room_instance.position = room_coord * grid_cell_size
 		grid[room_coord] = room_instance
 		cennect_rooms(room_coord, room_instance)

@@ -32,6 +32,17 @@ func register_tiles() -> void:
 		tiles.append(tile)
 
 
+func crete_props(level_resource: LevelResource) -> void:
+	var random_props = randi_range(level_resource.min_props_per_room, level_resource.max_props_per_room)
+	for i in random_props:
+		var tile_coord: Vector2i = tiles.pick_random()
+		var tile_position = tile_data.map_to_local(tile_coord)
+		var prop_instance: Prop = level_resource.props.pick_random().instantiate() as Prop
+		add_child(prop_instance)
+		prop_instance.position = tile_position
+	
+
+
 func lock_room() -> void:
 	for direction: Vector2i in room_doors:
 		var wall = room_walls[direction]
