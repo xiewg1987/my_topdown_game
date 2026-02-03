@@ -4,7 +4,7 @@
 
 [node name="BulletBase" type="Area2D"]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_57w0m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

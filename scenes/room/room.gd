@@ -32,6 +32,10 @@ func register_tiles() -> void:
 		tiles.append(tile)
 
 
+func get_free_spawn_position() -> Vector2:
+	var tile_coord = tiles.pick_random()
+	return tile_data.map_to_local(tile_coord)
+
 func crete_props(level_resource: LevelResource) -> void:
 	var random_props = randi_range(level_resource.min_props_per_room, level_resource.max_props_per_room)
 	for i in random_props:

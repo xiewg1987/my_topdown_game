@@ -1,0 +1,29 @@
+class_name EnemySpawner
+extends Node
+
+
+var enemies: Array[Enemy] = []
+var enemies_killed := 0
+
+
+func _ready() -> void:
+	EventBus.enemy.on_enemy_die.connect(_on_enemy_die)
+
+
+func spawn_enemies(level_resource: LevelResource, room: LevelRoom) -> void:
+	if level_resource.enemy_scenes.is_empty(): return
+	await get_tree().create_timer(0.8).timeout
+	var amount = randi_range(level_resource.min_enemies_per_room, level_resource.max_enemies_per_room)
+	for i in amount:
+		var enemy_instance: Enemy = level_resource.enemy_scenes.pick_random().instantiate() as Enemy
+		enemies.append(enemy_instance)
+		get_parent().add_child(enemy_instance)
+		enemy_instance.global_position = room.to_global(room.get_free_spawn_position()) 
+
+
+func _on_enemy_die() -> void:
+	enemies_killed += 1
+	if enemies_killed >= enemies.size():
+		enemies.clear()
+		enemies_killed = 0
+		EventBus.rooms.emit_on_room_cleared()

@@ -42,6 +42,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_3w5uu"]
 
 [node name="Enemy4" instance=ExtResource("1_uqw3u")]
+collision_mask = 0
 
 [node name="AnimatedSprite" parent="Visuais" index="1"]
 sprite_frames = SubResource("SpriteFrames_v6q4v")

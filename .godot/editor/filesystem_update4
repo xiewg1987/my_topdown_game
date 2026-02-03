@@ -19,3 +19,10 @@ res://scenes/enemies/enemy/enemy_2.tscn
 res://scenes/enemies/enemy/enemy_3.tscn
 res://scenes/enemies/enemy/enemy_4.tscn
 res://autoloads/global/global.gd
+res://autoloads/event_bus/enemy/enemy_signal.gd
+res://autoloads/event_bus/rooms/rooms_signal.gd
+res://autoloads/event_bus/event_bus.gd
+res://components/enemy_spawner/enemy_spawner.gd
+res://scenes/bullets/bullet_sniper/bullet_sniper.tscn
+res://scenes/bullets/bullet.gd
+res://scenes/bullets/bullet_base.tscn

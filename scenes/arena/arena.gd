@@ -9,6 +9,7 @@ extends Node2D
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var mana_bar: TextureProgressBar = %ManaBar
 @onready var map_controller: MapController = %MapController
+@onready var enemy_spawner: EnemySpawner = %EnemySpawner
 
 var player_instance: Player
 var current_room: LevelRoom
@@ -22,6 +23,7 @@ var directions := [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
 	EventBus.rooms.on_player_room_entered.connect(_on_player_room_entered)
+	EventBus.rooms.on_room_cleared.connect(_on_room_cleared)
 	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
 	
@@ -142,6 +144,12 @@ func _on_player_room_entered(room: LevelRoom) -> void:
 	map_controller.update_on_room_entered(relative_coord)
 	if not room.is_cleared:
 		room.lock_room()
+		enemy_spawner.spawn_enemies(level_resource, current_room)
+
+
+func _on_room_cleared() -> void:
+	current_room.unlock_room()
+	current_room.is_cleared = true
 
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:

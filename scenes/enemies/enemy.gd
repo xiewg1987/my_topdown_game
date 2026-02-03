@@ -29,5 +29,6 @@ func rotate_enemy() -> void:
 func _on_player_detector_body_entered(_body: Node2D) -> void:
 	animated_sprite.play("die")
 	await animated_sprite.animation_finished
+	EventBus.enemy.emit_on_enemy_die()
 	queue_free()
 	

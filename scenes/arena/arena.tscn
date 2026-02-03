@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cimejvq3aks4b"]
+[gd_scene load_steps=13 format=3 uid="uid://cimejvq3aks4b"]
 
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="1_1qjuf"]
 [ext_resource type="Script" uid="uid://bgfg0ustgdluf" path="res://scenes/arena/arena.gd" id="1_u52cf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cf2ypr83psjfm" path="res://assets/sprites/interface/bar_health.png" id="5_jx0ua"]
 [ext_resource type="Texture2D" uid="uid://djtqrhxpxpjeg" path="res://assets/sprites/interface/bar_mana.png" id="6_jx0ua"]
 [ext_resource type="Script" uid="uid://3edbrkt6kddl" path="res://scenes/arena/map_controller.gd" id="10_2ml6w"]
+[ext_resource type="Script" uid="uid://d176oyvtkbktd" path="res://components/enemy_spawner/enemy_spawner.gd" id="11_xgbxb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8trdl"]
 atlas = ExtResource("1_1qjuf")
@@ -19,6 +20,11 @@ region = Rect2(48, 0, 48, 48)
 script = ExtResource("1_u52cf")
 arena_cursor = ExtResource("2_6w4xk")
 level_resource = ExtResource("3_6w4xk")
+
+[node name="EnemySpawner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_xgbxb")
+metadata/_custom_type_script = "uid://d176oyvtkbktd"
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
