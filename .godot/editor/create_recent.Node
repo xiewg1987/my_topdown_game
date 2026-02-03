@@ -1,8 +1,10 @@
+GPUParticles2D
+AnimationPlayer
+Sprite2D
 Node2D
 EnemySpawner
 CollisionShape2D
 Area2D
-Sprite2D
 AnimatedSprite2D
 CharacterBody2D
 Arena
@@ -11,4 +13,3 @@ TextureRect
 TileMapLayer
 Marker2D
 Camera2D
-Label

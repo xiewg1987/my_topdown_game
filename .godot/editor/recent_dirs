@@ -1,3 +1,5 @@
+res://scenes/particle
+res://scenes/ui/spawn_marker
 res://scenes/enemies/enemy
 res://scenes/enemies
 res://scenes/props
@@ -18,6 +20,4 @@ res://scenes/weapons/melee/weapon_melee_sword
 res://assets/sprites/interface/Tilemap
 res://scenes/bullets/bullet_uzi
 res://scenes/bullets
-res://scenes/bullets/bullet_shotgun
-res://scenes/bullets/bullet_rifles
 C:/Users/xiewe/Downloads

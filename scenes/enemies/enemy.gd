@@ -1,7 +1,7 @@
 class_name Enemy
 extends CharacterBody2D
 
-const SPEED := 50.0
+const SPEED := 0.0
 
 @export var hurt_sound: AudioStream
 

@@ -4,6 +4,8 @@ var save_setting_path := "user://settings.json"
 
 const EXPLOSION_EFFECT = preload("uid://jmfg8wkw46yc")
 const DAMAGE_TEXT = preload("uid://c0tpbghu8sfq7")
+const SPAWN_MARKER = preload("uid://brmmx1ct7w4dh")
+const DEAD_PARTICLE = preload("uid://cyxp6ptyt13ew")
 
 ## 配置字典
 var settings: Dictionary = {
@@ -55,6 +57,12 @@ func create_demage_text(damage: float, position:Vector2) -> void:
 	get_tree().root.add_child(damage_text_instance)
 	damage_text_instance.damgea = damage
 	damage_text_instance.global_position = position + Vector2.RIGHT.rotated(random_position) * 20 
+
+
+func create_dead_particle(texture: Texture) -> void:
+	var particle_instance: GPUParticles2D = DEAD_PARTICLE.instantiate()
+	get_tree().root.add_child(particle_instance)
+	particle_instance.texture = texture
 
 
 func get_player_scene() -> PackedScene:
