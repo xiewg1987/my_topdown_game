@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var mana_bar: TextureProgressBar = %ManaBar
+@onready var map_controller: MapController = %MapController
 
 var player_instance: Player
 var current_room: LevelRoom
@@ -125,8 +126,19 @@ func load_game_selection() -> void:
 	player_instance.global_position = grid[Vector2i.ZERO].player_spawn_ponsition.global_position
 
 
+func find_coord_from_room(room: LevelRoom) -> Vector2i:
+	for coord: Vector2i in grid:
+		if grid[coord] == room:
+			return coord
+	return Vector2i.MAX
+
+
 func _on_player_room_entered(room: LevelRoom) -> void:
+	if current_room == room: return
 	current_room = room
+	var absolute_coord = find_coord_from_room(room)
+	var relative_coord = absolute_coord - start_room_coord
+	map_controller.update_on_room_entered(relative_coord)
 	if not room.is_cleared:
 		room.lock_room()
 

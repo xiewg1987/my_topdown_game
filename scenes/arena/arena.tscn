@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cimejvq3aks4b"]
+[gd_scene load_steps=12 format=3 uid="uid://cimejvq3aks4b"]
 
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="1_1qjuf"]
 [ext_resource type="Script" uid="uid://bgfg0ustgdluf" path="res://scenes/arena/arena.gd" id="1_u52cf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bvr7in7eey6cb" path="res://assets/sprites/interface/bar_over.png" id="4_asdgj"]
 [ext_resource type="Texture2D" uid="uid://cf2ypr83psjfm" path="res://assets/sprites/interface/bar_health.png" id="5_jx0ua"]
 [ext_resource type="Texture2D" uid="uid://djtqrhxpxpjeg" path="res://assets/sprites/interface/bar_mana.png" id="6_jx0ua"]
+[ext_resource type="Script" uid="uid://3edbrkt6kddl" path="res://scenes/arena/map_controller.gd" id="10_2ml6w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8trdl"]
 atlas = ExtResource("1_1qjuf")
@@ -88,3 +89,17 @@ stretch_margin_right = 3
 texture_under = ExtResource("3_5tue2")
 texture_over = ExtResource("4_asdgj")
 texture_progress = ExtResource("6_jx0ua")
+
+[node name="MapController" type="Control" parent="UILayer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 128.0
+grow_horizontal = 0
+script = ExtResource("10_2ml6w")

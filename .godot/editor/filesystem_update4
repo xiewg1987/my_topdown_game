@@ -1,14 +1,8 @@
-res://scenes/room/level_one_room/level_one_room.tscn
+res://scenes/ui/min_map/map_cell/map_cell.tscn
 res://theme/gdshader/transition.gdshader
 res://theme/tileset/room/level_one_room.tres
 res://theme/gdshader/background.gdshader
-res://custom_resource/level/level_resourec.gd
-res://custom_resource/level/one/level_one.tres
+res://scenes/ui/min_map/map_cell/map_cell.gd
 res://scenes/arena/arena.tscn
+res://scenes/arena/map_controller.gd
 res://scenes/arena/arena.gd
-res://scenes/room/level_one_room/level_one_h_corridor.tscn
-res://scenes/room/room.gd
-res://scenes/weapons/range/weapon_range_base.tscn
-res://autoloads/event_bus/event_bus.gd
-res://autoloads/event_bus/rooms/rooms_signal.gd
-res://scenes/player/player_base.tscn

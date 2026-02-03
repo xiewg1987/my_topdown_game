@@ -1,3 +1,4 @@
+res://scenes/min_map/map_cell
 res://scenes/room/level_one_room
 res://custom_resource/level/one/
 res://theme/tileset/room
@@ -19,5 +20,4 @@ res://scenes/bullets/bullet_rifles
 res://scenes/bullets/bullet_machine_gun
 res://scenes/bullets/bullet_sniper
 res://scenes/bullets/bullet_submachine_gun
-res://scenes/bullets/bullet_pistol
 C:/Users/xiewe/Downloads
