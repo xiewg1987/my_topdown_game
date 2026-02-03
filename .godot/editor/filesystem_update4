@@ -1,8 +1,9 @@
-res://scenes/ui/min_map/map_cell/map_cell.tscn
+res://scenes/props/plant/plant_4.tscn
 res://theme/gdshader/transition.gdshader
 res://theme/tileset/room/level_one_room.tres
 res://theme/gdshader/background.gdshader
-res://scenes/ui/min_map/map_cell/map_cell.gd
+res://scenes/props/props_base.tscn
+res://scenes/props/props_base.gd
+res://scenes/player/player_base.tscn
 res://scenes/arena/arena.tscn
-res://scenes/arena/map_controller.gd
-res://scenes/arena/arena.gd
+res://scenes/room/level_one_room/level_one_room.tscn
