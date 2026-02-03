@@ -16,10 +16,14 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_satqt")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visuais"]
+unique_name_in_owner = true
 position = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="PlayerDetector" type="Area2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

@@ -15,3 +15,7 @@ res://scenes/enemies/enemy_base.tscn
 res://scenes/enemies/enemy_base.gd
 res://scenes/enemies/enemy/enemy_1.tscn
 res://scenes/enemies/enemy.gd
+res://scenes/enemies/enemy/enemy_2.tscn
+res://scenes/enemies/enemy/enemy_3.tscn
+res://scenes/enemies/enemy/enemy_4.tscn
+res://autoloads/global/global.gd

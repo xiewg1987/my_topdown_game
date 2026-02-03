@@ -13,7 +13,7 @@ animations = [{
 "texture": ExtResource("2_bgxi5")
 }],
 "loop": false,
-"name": &"dead",
+"name": &"die",
 "speed": 5.0
 }, {
 "frames": [{
@@ -37,7 +37,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bgxi5"]
-radius = 6.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ja4hy"]
 radius = 8.0
@@ -48,11 +48,11 @@ collision_mask = 11
 
 [node name="AnimatedSprite" parent="Visuais" index="1"]
 sprite_frames = SubResource("SpriteFrames_1chku")
-animation = &"move"
+animation = &"die"
 autoplay = "move"
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -9)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_bgxi5")
 
 [node name="PlayerDetector" parent="." index="2"]

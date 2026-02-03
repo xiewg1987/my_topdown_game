@@ -34,6 +34,7 @@ var weapons_scene: Dictionary[String, PackedScene] = {
 	"Axe": preload("uid://drdalhkurttxy")
 }
 
+var player_ref: Player
 var selected_player: PlayerResource
 var selected_weapon: WeaponResource
 
