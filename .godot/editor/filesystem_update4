@@ -11,3 +11,7 @@ res://custom_resource/level/level_resourec.gd
 res://custom_resource/level/one/level_one.tres
 res://scenes/room/room.gd
 res://scenes/arena/arena.gd
+res://scenes/enemies/enemy_base.tscn
+res://scenes/enemies/enemy_base.gd
+res://scenes/enemies/enemy/enemy_1.tscn
+res://scenes/enemies/enemy.gd
