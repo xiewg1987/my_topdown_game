@@ -27,7 +27,7 @@ func _ready() -> void:
 	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
 	
-	generate_level_layout() 
+	generate_level_layout()
 	# 建议将select_special_rooms放在generate_level_layout内
 	# select_special_rooms需要等待布局完成后执行
 	# 临时注释方便调试

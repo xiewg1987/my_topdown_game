@@ -18,3 +18,4 @@ res://scenes/enemies/enemy/enemy_2.tscn
 res://scenes/arena/arena.tscn
 res://theme/tileset/room/level_one_room.tres
 res://scenes/arena/arena.gd
+res://scenes/bullets/bullet_machine_gun/bullet_machine_gun.tscn
