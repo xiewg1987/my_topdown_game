@@ -43,8 +43,6 @@ radius = 4.0
 radius = 8.0
 
 [node name="Enemy1" instance=ExtResource("1_1chku")]
-collision_layer = 4
-collision_mask = 11
 
 [node name="AnimatedSprite" parent="Visuais" index="1"]
 sprite_frames = SubResource("SpriteFrames_1chku")
@@ -54,9 +52,6 @@ autoplay = "move"
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_bgxi5")
-
-[node name="PlayerDetector" parent="." index="2"]
-collision_mask = 11
 
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2(0, -8)

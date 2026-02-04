@@ -1,4 +1,6 @@
-res://custom_resource/weapons/weapons_enemy
+res://assets/sprites/weapons
+res://scenes/bullets/bullet_pistol_enemy
+res://scenes/bullets
 res://theme/extra/material
 res://theme/gdshader
 res://scenes/particle
@@ -15,9 +17,7 @@ res://scenes/room
 res://scenes/extra
 res://assets/sprites/interface
 res://scenes/effect/explosion_effect
-res://assets/sprites/weapons
 res://custom_resource/weapons/melee/
 res://scenes/weapons/melee/weapon_melee_axe
 res://scenes/weapons/melee
-res://scenes/weapons/melee/weapon_melee_sword
 C:/Users/xiewe/Downloads

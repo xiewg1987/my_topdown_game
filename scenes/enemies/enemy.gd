@@ -20,6 +20,7 @@ extends CharacterBody2D
 
 var can_move: bool = true
 var is_killed: bool = false
+var cooldown: float
 
 
 func _ready() -> void:
@@ -29,10 +30,10 @@ func _ready() -> void:
 	weapon_controller.equip_weapon(weapon)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if not Global.player_ref: return
 	rotate_enemy()
-	manage_weapon()
+	manage_weapon(delta)
 
 
 func _physics_process(_delta: float) -> void:
@@ -62,11 +63,14 @@ func enemy_daed() -> void:
 	queue_free()
 
 
-func manage_weapon() -> void:
+func manage_weapon(delta: float) -> void:
 	if not weapon or not weapon_controller: return
 	weapon_controller.target_position = Global.player_ref.global_position
 	weapon_controller.rotate_weapon()
-
+	cooldown -= delta
+	if cooldown <= 0:
+		weapon_controller.current_weapon.use_weapon()
+		cooldown = weapon_controller.current_weapon.weapon_resource.cooldown
 
 
 func _on_player_detector_body_entered(_body: Node2D) -> void:

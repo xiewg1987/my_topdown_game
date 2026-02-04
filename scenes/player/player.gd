@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	weapon_controller.target_position = global_position
+	weapon_controller.target_position = get_global_mouse_position()
 	weapon_controller.rotate_weapon()
 	coolfown -= delta
 	if Input.is_action_pressed("shoot"):

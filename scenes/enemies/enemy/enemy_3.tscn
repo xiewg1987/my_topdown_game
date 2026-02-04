@@ -58,6 +58,9 @@ autoplay = "move"
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_ajjtk")
 
+[node name="PlayerDetector" parent="." index="2"]
+collision_layer = 0
+
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_rafmm")
