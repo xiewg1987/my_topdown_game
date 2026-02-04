@@ -1,3 +1,5 @@
+res://theme/extra/material
+res://theme/gdshader
 res://scenes/particle
 res://scenes/ui/spawn_marker
 res://scenes/enemies/enemy
@@ -18,6 +20,4 @@ res://scenes/weapons/melee/weapon_melee_axe
 res://scenes/weapons/melee
 res://scenes/weapons/melee/weapon_melee_sword
 res://assets/sprites/interface/Tilemap
-res://scenes/bullets/bullet_uzi
-res://scenes/bullets
 C:/Users/xiewe/Downloads
