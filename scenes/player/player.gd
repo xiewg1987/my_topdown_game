@@ -11,10 +11,21 @@ extends CharacterBody2D
 var can_move: bool = true ## 移动判断
 var movement: Vector2 ## 移动
 var direction: Vector2 ## 移动向量
-
+var coolfown: float
 
 func _ready() -> void:
 	health_component.init_health(player_resource.max_hp)
+	
+
+func _process(delta: float) -> void:
+	weapon_controller.target_position = global_position
+	weapon_controller.rotate_weapon()
+	coolfown -= delta
+	if Input.is_action_pressed("shoot"):
+		if coolfown <= 0:
+			weapon_controller.current_weapon.use_weapon()
+			coolfown = weapon_controller.current_weapon.weapon_resource.cooldown
+
 
 func _physics_process(_delta: float) -> void:
 	if not can_move: return

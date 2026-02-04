@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://doko3gb4wm4q6" path="res://scenes/player/player.gd" id="1_xb0ah"]
 [ext_resource type="Script" uid="uid://b4emqkh6ethy8" path="res://components/health_component/health_component.gd" id="3_0t7ad"]
 [ext_resource type="Texture2D" uid="uid://dawvmsgg5mc6o" path="res://assets/sprites/Shadow.png" id="3_76ihk"]
-[ext_resource type="Script" uid="uid://ct6omq2udthcr" path="res://scenes/player/weapon_controller.gd" id="4_t60ga"]
+[ext_resource type="PackedScene" uid="uid://bikbttvsagmg3" path="res://scenes/weapons/weapon_controller/weapon_controller.tscn" id="4_0t7ad"]
 
 [node name="PlayerBase" type="CharacterBody2D"]
 editor_description = "基础玩家节点"
@@ -36,9 +36,8 @@ unique_name_in_owner = true
 script = ExtResource("3_0t7ad")
 metadata/_custom_type_script = "uid://b4emqkh6ethy8"
 
-[node name="WeaponController" type="Node2D" parent="."]
+[node name="WeaponController" parent="." instance=ExtResource("4_0t7ad")]
 unique_name_in_owner = true
-script = ExtResource("4_t60ga")
 
 [connection signal="on_unit_damaged" from="HealthComponent" to="." method="_on_health_component_on_unit_damaged"]
 [connection signal="on_unit_dead" from="HealthComponent" to="." method="_on_health_component_on_unit_dead"]

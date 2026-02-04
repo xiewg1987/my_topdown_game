@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://73biq44h5yha"]
+[gd_scene load_steps=12 format=3 uid="uid://73biq44h5yha"]
 
 [ext_resource type="PackedScene" uid="uid://bsvpy0e1smm44" path="res://scenes/enemies/enemy_base.tscn" id="1_uqw3u"]
 [ext_resource type="Texture2D" uid="uid://dt305ttjc2qw7" path="res://assets/sprites/enemies/Sprites/tile_0015.png" id="2_0ttpq"]
 [ext_resource type="Texture2D" uid="uid://xo043uc37wpm" path="res://assets/sprites/enemies/Sprites/tile_0014.png" id="2_7033g"]
 [ext_resource type="Texture2D" uid="uid://cijt4b5liatug" path="res://assets/sprites/enemies/Sprites/tile_0012.png" id="2_afbbx"]
+[ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://assets/sprites/weapons/tiles/tile_0001.png" id="2_c8juk"]
+[ext_resource type="Resource" uid="uid://be78xukdy85cm" path="res://custom_resource/weapons/enemy_weapons/enemy_pistol/pistol_enemy.tres" id="2_dr3hu"]
 [ext_resource type="Texture2D" uid="uid://dlawjfchfn4so" path="res://assets/sprites/enemies/Sprites/tile_0013.png" id="3_7033g"]
+[ext_resource type="PackedScene" uid="uid://bikbttvsagmg3" path="res://scenes/weapons/weapon_controller/weapon_controller.tscn" id="6_3w5uu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6q4v"]
 animations = [{
@@ -43,6 +46,8 @@ radius = 4.0
 
 [node name="Enemy4" instance=ExtResource("1_uqw3u")]
 collision_mask = 0
+icon_particle = ExtResource("2_c8juk")
+weapon = ExtResource("2_dr3hu")
 
 [node name="AnimatedSprite" parent="Visuais" index="1"]
 sprite_frames = SubResource("SpriteFrames_v6q4v")
@@ -57,3 +62,5 @@ shape = SubResource("CircleShape2D_0ttpq")
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_3w5uu")
 debug_color = Color(0.9372549, 0.09803922, 0.5686275, 0.41960785)
+
+[node name="WeaponController" parent="." index="6" instance=ExtResource("6_3w5uu")]

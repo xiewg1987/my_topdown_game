@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var enemy_detector: Area2D = %EnemyDetector
+@onready var weapon_controller: WeaponController = $WeaponController
 
 
 var can_move: bool = true
@@ -24,7 +25,14 @@ var is_killed: bool = false
 func _ready() -> void:
 	health_bar.value = 1
 	health_component.init_health(max_health)
-	
+	if not weapon: return
+	weapon_controller.equip_weapon(weapon)
+
+
+func _process(_delta: float) -> void:
+	if not Global.player_ref: return
+	rotate_enemy()
+	manage_weapon()
 
 
 func _physics_process(_delta: float) -> void:
@@ -52,6 +60,14 @@ func enemy_daed() -> void:
 	Global.create_dead_particle(icon_particle, global_position)
 	EventBus.enemy.emit_on_enemy_die()
 	queue_free()
+
+
+func manage_weapon() -> void:
+	if not weapon or not weapon_controller: return
+	weapon_controller.target_position = Global.player_ref.global_position
+	weapon_controller.rotate_weapon()
+
+
 
 func _on_player_detector_body_entered(_body: Node2D) -> void:
 	enemy_daed()

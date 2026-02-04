@@ -10,3 +10,13 @@ res://scenes/bullets/bullet.gd
 res://theme/gdshader/enemy_base.gdshader
 res://theme/extra/material/enemy_base.tres
 res://scenes/enemies/enemy/enemy_4.tscn
+res://scenes/player/player_base.tscn
+res://components/weapon_controller/weapon_controller.tscn
+res://scenes/weapons/weapon_controller/weapon_controller.gd
+res://scenes/player/player.gd
+res://scenes/weapons/range/weapon_range_base.tscn
+res://scenes/weapons/range/weapon_range.gd
+res://scenes/enemies/enemy/enemy_2.tscn
+res://scenes/enemies/enemy/enemy_3.tscn
+res://custom_resource/weapons/enemy_weapons/enemy_pistol/pistol_enemy.tres
+res://scenes/arena/arena.gd

@@ -1,3 +1,4 @@
+res://custom_resource/weapons/weapons_enemy
 res://theme/extra/material
 res://theme/gdshader
 res://scenes/particle
@@ -19,5 +20,4 @@ res://custom_resource/weapons/melee/
 res://scenes/weapons/melee/weapon_melee_axe
 res://scenes/weapons/melee
 res://scenes/weapons/melee/weapon_melee_sword
-res://assets/sprites/interface/Tilemap
 C:/Users/xiewe/Downloads

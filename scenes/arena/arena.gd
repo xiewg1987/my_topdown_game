@@ -125,7 +125,7 @@ func find_farthest_room() -> Vector2i:
 func load_game_selection() -> void:
 	player_instance = Global.get_player_scene().instantiate() as Player
 	add_child(player_instance)
-	player_instance.weapon_controller.equip_weapon()
+	player_instance.weapon_controller.equip_weapon(Global.selected_weapon)
 	player_instance.global_position = grid[Vector2i.ZERO].player_spawn_ponsition.global_position
 	Global.player_ref = player_instance
 
