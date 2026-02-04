@@ -9,3 +9,4 @@ res://scenes/bullets/bullet_base.tscn
 res://scenes/bullets/bullet.gd
 res://theme/gdshader/enemy_base.gdshader
 res://theme/extra/material/enemy_base.tres
+res://scenes/enemies/enemy/enemy_4.tscn

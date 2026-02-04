@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var icon_particle: Texture
 @export var max_health := 5.0
 @export var collision_damage := 2.0
-@export var chase_speed := 40.0
+@export var chase_speed := 60.0
 @export var move_speed := 40.0
 @export var weapon: WeaponResource
 
@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var health_component: HealthComponent = %HealthComponent
+@onready var enemy_detector: Area2D = %EnemyDetector
 
 
 var can_move: bool = true
@@ -29,6 +30,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if not Global.player_ref ||  not can_move: return
 	var direction = global_position.direction_to(Global.player_ref.global_position)
+	for enemy in enemy_detector.get_overlapping_bodies():
+		if enemy != self and enemy.is_inside_tree():
+			var vector = global_position - enemy.global_position
+			direction = 20 * vector.normalized() / vector.length()
 	velocity = direction * chase_speed
 	move_and_slide()
 	rotate_enemy()
@@ -42,6 +47,8 @@ func rotate_enemy() -> void:
 
 
 func enemy_daed() -> void:
+	if is_killed: return
+	is_killed = true
 	Global.create_dead_particle(icon_particle, global_position)
 	EventBus.enemy.emit_on_enemy_die()
 	queue_free()
