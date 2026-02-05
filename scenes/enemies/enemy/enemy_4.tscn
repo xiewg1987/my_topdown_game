@@ -44,7 +44,6 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_3w5uu"]
 
 [node name="Enemy4" instance=ExtResource("1_uqw3u")]
-collision_layer = 0
 enemy_type = "Weapon"
 icon_particle = ExtResource("2_0ttpq")
 weapon = ExtResource("2_dr3hu")

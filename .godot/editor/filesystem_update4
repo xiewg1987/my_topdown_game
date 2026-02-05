@@ -22,3 +22,6 @@ res://scenes/bullets/bullet_machine_gun/bullet_machine_gun.tscn
 res://components/enemy_spawner/enemy_spawner.gd
 res://scenes/particle/dead_particle/dead_particle.tscn
 res://autoloads/global/global.gd
+res://scenes/effect/blood_effect/blood_effect.tscn
+res://scenes/effect/blood_effect/blood_effect.gd
+res://custom_resource/weapons/range/weapon_uzi/weapon_uzi.tres
