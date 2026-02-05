@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://jq1wxnd3f37t"]
+[gd_scene load_steps=24 format=3 uid="uid://jq1wxnd3f37t"]
 
 [ext_resource type="Texture2D" uid="uid://db1q7qr26dxrm" path="res://assets/sprites/coin_anim.png" id="1_n85wu"]
 [ext_resource type="Script" uid="uid://d0thxmqf80sno" path="res://scenes/ui/coin/coin.gd" id="1_wsou0"]
@@ -120,17 +120,104 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_n85wu"]
 radius = 7.0
 
+[sub_resource type="Animation" id="Animation_tq3ko"]
+resource_name = "in"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -28), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_5f15n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f15n"]
+_data = {
+&"RESET": SubResource("Animation_5f15n"),
+&"in": SubResource("Animation_tq3ko")
+}
+
 [node name="Coin" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_wsou0")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Visuals"]
 self_modulate = Color(1, 1, 1, 0.49019608)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_tq3ko")
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visuals"]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_gh78n")
 autoplay = "default"
@@ -140,5 +227,11 @@ frame_progress = 0.30110368
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_n85wu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5f15n")
+}
+autoplay = "in"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

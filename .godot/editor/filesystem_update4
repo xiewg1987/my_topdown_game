@@ -34,3 +34,5 @@ res://scenes/ui/coin/coin.gd
 res://autoloads/event_bus/event_bus.gd
 res://autoloads/event_bus/shop/shop_signal.gd
 res://scenes/room/level_one_room/level_one_room.tscn
+res://scenes/ui/treasure_box/treasure_box.tscn
+res://scenes/ui/treasure_box/treasure_box.gd

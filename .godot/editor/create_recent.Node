@@ -1,14 +1,15 @@
-Sprite2D
+Node2D
+AnimationPlayer
+AnimationTree
+Marker2D
 CollisionShape2D
-AnimatedSprite2D
 Area2D
+Sprite2D
+StaticBody2D
+AnimatedSprite2D
 Label
 TextureRect
 HBoxContainer
 Control
-AnimationPlayer
 Label      - Matches the "text" keyword.
 RichTextLabel
-WeaponController
-HealthComponent
-ProgressBar
