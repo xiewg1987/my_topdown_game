@@ -25,3 +25,7 @@ res://autoloads/global/global.gd
 res://scenes/effect/blood_effect/blood_effect.tscn
 res://scenes/effect/blood_effect/blood_effect.gd
 res://custom_resource/weapons/range/weapon_uzi/weapon_uzi.tres
+res://custom_resource/items/items_resource.gd
+res://custom_resource/items/potion/itme_potion2.tres
+res://scenes/store_item/store_item_base.tscn
+res://scenes/store_item/store_item_base.gd

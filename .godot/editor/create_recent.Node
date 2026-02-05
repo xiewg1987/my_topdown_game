@@ -1,15 +1,14 @@
-WeaponController
-AnimatedSprite2D
+AnimationPlayer
+Label      - Matches the "text" keyword.
+TextureRect
+Label
+Sprite2D
+HBoxContainer
+RichTextLabel
 CollisionShape2D
 Area2D
+WeaponController
+AnimatedSprite2D
 HealthComponent
 ProgressBar
 GPUParticles2D
-AnimationPlayer
-Sprite2D
-Node2D
-EnemySpawner
-CharacterBody2D
-Arena
-Control
-TextureRect

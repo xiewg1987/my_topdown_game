@@ -1,3 +1,4 @@
+ItemsResource
 WeaponResource
 LevelResource
 PlayerResource
