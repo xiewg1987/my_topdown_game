@@ -29,3 +29,8 @@ res://custom_resource/items/items_resource.gd
 res://custom_resource/items/potion/itme_potion2.tres
 res://scenes/store_item/store_item_base.tscn
 res://scenes/store_item/store_item_base.gd
+res://scenes/ui/coin/coin.tscn
+res://scenes/ui/coin/coin.gd
+res://autoloads/event_bus/event_bus.gd
+res://autoloads/event_bus/shop/shop_signal.gd
+res://scenes/room/level_one_room/level_one_room.tscn

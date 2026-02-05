@@ -4,12 +4,14 @@ extends Node2D
 
 @export var arena_cursor: Texture2D
 @export var level_resource: LevelResource
+@export var coin_sound: AudioStream
 
 
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var mana_bar: TextureProgressBar = %ManaBar
 @onready var map_controller: MapController = %MapController
 @onready var enemy_spawner: EnemySpawner = %EnemySpawner
+@onready var total_coins: Label = %TotalCoins
 
 var player_instance: Player
 var current_room: LevelRoom
@@ -24,9 +26,9 @@ func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
 	EventBus.rooms.on_player_room_entered.connect(_on_player_room_entered)
 	EventBus.rooms.on_room_cleared.connect(_on_room_cleared)
-	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
-	
+	EventBus.shop.on_coin_picked.connect(_on_coin_picked)
+	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	generate_level_layout()
 	# 建议将select_special_rooms放在generate_level_layout内
 	# select_special_rooms需要等待布局完成后执行
@@ -134,6 +136,12 @@ func find_coord_from_room(room: LevelRoom) -> Vector2i:
 		if grid[coord] == room:
 			return coord
 	return Vector2i.MAX
+
+
+func _on_coin_picked() -> void:
+	SFXPlayer.play(coin_sound)
+	total_coins.text = str(Global.conis)
+	
 
 
 func _on_player_room_entered(room: LevelRoom) -> void:

@@ -39,6 +39,7 @@ var weapons_scene: Dictionary[String, PackedScene] = {
 }
 
 var player_ref: Player
+var conis: float
 var selected_player: PlayerResource
 var selected_weapon: WeaponResource
 

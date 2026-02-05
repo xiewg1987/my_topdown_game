@@ -1,14 +1,14 @@
+Sprite2D
+CollisionShape2D
+AnimatedSprite2D
+Area2D
+Label
+TextureRect
+HBoxContainer
+Control
 AnimationPlayer
 Label      - Matches the "text" keyword.
-TextureRect
-Label
-Sprite2D
-HBoxContainer
 RichTextLabel
-CollisionShape2D
-Area2D
 WeaponController
-AnimatedSprite2D
 HealthComponent
 ProgressBar
-GPUParticles2D

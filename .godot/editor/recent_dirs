@@ -1,6 +1,7 @@
+res://assets/sprites
+res://scenes/ui/coin
 res://scenes/store_item
 res://custom_resource/items/potion
-res://assets/sprites
 res://scenes/effect/blood_effect
 res://assets/sprites/weapons
 res://scenes/bullets/bullet_pistol_enemy
@@ -19,5 +20,4 @@ res://theme/tileset/room
 res://assets/sprites/tiles
 res://scenes/room
 res://scenes/extra
-res://assets/sprites/interface
 C:/Users/xiewe/Downloads
