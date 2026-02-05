@@ -4,6 +4,7 @@ extends Node
 @export var arena: Arena
 
 var enemies: Array[Enemy] = []
+var amount: int
 var enemies_killed := 0
 
 
@@ -14,7 +15,7 @@ func _ready() -> void:
 func spawn_enemies(level_resource: LevelResource, room: LevelRoom) -> void:
 	if level_resource.enemy_scenes.is_empty(): return
 	await get_tree().create_timer(0.8).timeout
-	var amount = randi_range(level_resource.min_enemies_per_room, level_resource.max_enemies_per_room)
+	amount = randi_range(level_resource.min_enemies_per_room, level_resource.max_enemies_per_room)
 	for i in amount:
 		var spawn_global_positons = room.to_global(room.get_free_spawn_position())
 		var marker_instance: SpawnMarker = Global.SPAWN_MARKER.instantiate() as SpawnMarker
@@ -30,7 +31,7 @@ func spawn_enemies(level_resource: LevelResource, room: LevelRoom) -> void:
 
 func _on_enemy_die() -> void:
 	enemies_killed += 1
-	if enemies_killed >= enemies.size():
+	if enemies_killed >= amount:
 		enemies.clear()
 		enemies_killed = 0
 		EventBus.rooms.emit_on_room_cleared()
