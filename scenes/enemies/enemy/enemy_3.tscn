@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://itf3l2egdoi8"]
+[gd_scene load_steps=10 format=3 uid="uid://itf3l2egdoi8"]
 
 [ext_resource type="PackedScene" uid="uid://bsvpy0e1smm44" path="res://scenes/enemies/enemy_base.tscn" id="1_v6nm6"]
 [ext_resource type="Resource" uid="uid://be78xukdy85cm" path="res://custom_resource/weapons/enemy_weapons/enemy_pistol/pistol_enemy.tres" id="2_0c4lp"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://vasb2ne13fd0" path="res://assets/sprites/enemies/Sprites/tile_0011.png" id="2_ajjtk"]
 [ext_resource type="Texture2D" uid="uid://cs16bhrafjd28" path="res://assets/sprites/enemies/Sprites/tile_0008.png" id="2_mgm6v"]
 [ext_resource type="Texture2D" uid="uid://dotdkqrc8qv7q" path="res://assets/sprites/enemies/Sprites/tile_0009.png" id="3_170vj"]
-[ext_resource type="PackedScene" uid="uid://bikbttvsagmg3" path="res://scenes/weapons/weapon_controller/weapon_controller.tscn" id="6_rafmm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6nm6"]
 animations = [{
@@ -65,5 +64,3 @@ collision_layer = 0
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_rafmm")
 debug_color = Color(0.9372549, 0.09803922, 0.5686275, 0.41960785)
-
-[node name="WeaponController" parent="." index="6" instance=ExtResource("6_rafmm")]

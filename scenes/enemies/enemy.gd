@@ -21,7 +21,7 @@ enum EnemyStates{
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var enemy_detector: Area2D = %EnemyDetector
-@onready var weapon_controller: WeaponController = $WeaponController
+@onready var weapon_controller: WeaponController = %WeaponController
 
 
 var can_move: bool = true
@@ -112,14 +112,16 @@ func manage_weapon(delta: float) -> void:
 
 func _on_player_detector_body_entered(body: Node2D) -> void:
 	body.health_component.take_damage(collision_damage)
-	#enemy_daed()
 
 
 func _on_health_component_on_unit_damaged(_amount: float) -> void:
 	health_bar.value = health_component.current_health / max_health
 	animated_sprite.material = Global.Hit_MATERIAL
+	animated_sprite.play("hurt")
 	await get_tree().create_timer(0.15).timeout
+	animated_sprite.play("move")
 	animated_sprite.material = null
+
 
 func _on_health_component_on_unit_dead() -> void:
 	enemy_daed()
