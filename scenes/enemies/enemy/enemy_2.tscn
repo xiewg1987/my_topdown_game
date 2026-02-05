@@ -42,6 +42,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wuat4"]
 
 [node name="Enemy2" instance=ExtResource("1_v1uqi")]
+icon_particle = ExtResource("2_il2tp")
 
 [node name="AnimatedSprite" parent="Visuais" index="1"]
 sprite_frames = SubResource("SpriteFrames_wuat4")

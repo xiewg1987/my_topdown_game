@@ -1,7 +1,13 @@
 class_name Enemy
 extends CharacterBody2D
 
+enum EnemyStates{
+	FINDING_DESTINATION,
+	MOVING,
+	ATTACKING
+}
 
+@export_enum("Chase", "Weapon") var enemy_type := "Chase"
 @export var hurt_sound: AudioStream
 @export var icon_particle: Texture
 @export var max_health := 5.0
@@ -21,6 +27,9 @@ extends CharacterBody2D
 var can_move: bool = true
 var is_killed: bool = false
 var cooldown: float
+var parent_room: LevelRoom
+var enemy_state: EnemyStates
+var move_destionation: Vector2
 
 
 func _ready() -> void:
@@ -33,19 +42,47 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not Global.player_ref: return
 	rotate_enemy()
-	manage_weapon(delta)
+	if enemy_state == EnemyStates.ATTACKING:
+		manage_weapon(delta)
 
 
 func _physics_process(_delta: float) -> void:
 	if not Global.player_ref ||  not can_move: return
+	match enemy_type:
+		"Chase":
+			run_enemy_chase()
+		"Weapon":
+			run_enemy_Weapon()
+
+
+func run_enemy_chase() -> void:
 	var direction = global_position.direction_to(Global.player_ref.global_position)
 	for enemy in enemy_detector.get_overlapping_bodies():
 		if enemy != self and enemy.is_inside_tree():
 			var vector = global_position - enemy.global_position
-			direction = 20 * vector.normalized() / vector.length()
+			direction = 30 * vector.normalized() / vector.length()
 	velocity = direction * chase_speed
 	move_and_slide()
-	rotate_enemy()
+
+
+func run_enemy_Weapon() -> void:
+	match enemy_state:
+		EnemyStates.FINDING_DESTINATION:
+			var local_position = parent_room.get_free_spawn_position()
+			move_destionation = parent_room.to_global(local_position)
+			enemy_state = EnemyStates.MOVING
+		EnemyStates.MOVING:
+			var direction = global_position.direction_to(move_destionation)
+			velocity = direction * move_speed
+			move_and_slide()
+			if global_position.distance_to(move_destionation) < 2.0:
+				velocity = Vector2.ZERO
+				enemy_state = EnemyStates.ATTACKING
+		EnemyStates.ATTACKING:
+			velocity = Vector2.ZERO
+			move_and_slide()
+			await get_tree().create_timer(1.0).timeout
+			enemy_state = EnemyStates.FINDING_DESTINATION
 
 
 func rotate_enemy() -> void:
@@ -73,8 +110,9 @@ func manage_weapon(delta: float) -> void:
 		cooldown = weapon_controller.current_weapon.weapon_resource.cooldown
 
 
-func _on_player_detector_body_entered(_body: Node2D) -> void:
-	enemy_daed()
+func _on_player_detector_body_entered(body: Node2D) -> void:
+	body.health_component.take_damage(collision_damage)
+	#enemy_daed()
 
 
 func _on_health_component_on_unit_damaged(_amount: float) -> void:

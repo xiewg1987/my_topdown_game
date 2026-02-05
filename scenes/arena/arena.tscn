@@ -21,9 +21,10 @@ script = ExtResource("1_u52cf")
 arena_cursor = ExtResource("2_6w4xk")
 level_resource = ExtResource("3_6w4xk")
 
-[node name="EnemySpawner" type="Node" parent="."]
+[node name="EnemySpawner" type="Node" parent="." node_paths=PackedStringArray("arena")]
 unique_name_in_owner = true
 script = ExtResource("11_xgbxb")
+arena = NodePath("..")
 metadata/_custom_type_script = "uid://d176oyvtkbktd"
 
 [node name="UILayer" type="CanvasLayer" parent="."]

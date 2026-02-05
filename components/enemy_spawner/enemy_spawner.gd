@@ -1,6 +1,7 @@
 class_name EnemySpawner
 extends Node
 
+@export var arena: Arena
 
 var enemies: Array[Enemy] = []
 var enemies_killed := 0
@@ -24,6 +25,7 @@ func spawn_enemies(level_resource: LevelResource, room: LevelRoom) -> void:
 		enemies.append(enemy_instance)
 		get_parent().add_child(enemy_instance)
 		enemy_instance.global_position = spawn_global_positons
+		enemy_instance.parent_room = arena.current_room
 
 
 func _on_enemy_die() -> void:

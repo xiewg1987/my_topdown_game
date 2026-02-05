@@ -65,6 +65,7 @@ func create_dead_particle(texture: Texture, position: Vector2) -> void:
 	get_tree().root.add_child(particle_instance)
 	particle_instance.texture = texture
 	particle_instance.global_position = position
+	particle_instance.emitting = true
 
 
 func get_player_scene() -> PackedScene:

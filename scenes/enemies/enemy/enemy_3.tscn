@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://itf3l2egdoi8"]
+[gd_scene load_steps=11 format=3 uid="uid://itf3l2egdoi8"]
 
 [ext_resource type="PackedScene" uid="uid://bsvpy0e1smm44" path="res://scenes/enemies/enemy_base.tscn" id="1_v6nm6"]
 [ext_resource type="Resource" uid="uid://be78xukdy85cm" path="res://custom_resource/weapons/enemy_weapons/enemy_pistol/pistol_enemy.tres" id="2_0c4lp"]
 [ext_resource type="Texture2D" uid="uid://b0f87t2su3byt" path="res://assets/sprites/enemies/Sprites/tile_0010.png" id="2_170vj"]
 [ext_resource type="Texture2D" uid="uid://vasb2ne13fd0" path="res://assets/sprites/enemies/Sprites/tile_0011.png" id="2_ajjtk"]
-[ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://assets/sprites/weapons/tiles/tile_0001.png" id="2_fqqx6"]
 [ext_resource type="Texture2D" uid="uid://cs16bhrafjd28" path="res://assets/sprites/enemies/Sprites/tile_0008.png" id="2_mgm6v"]
 [ext_resource type="Texture2D" uid="uid://dotdkqrc8qv7q" path="res://assets/sprites/enemies/Sprites/tile_0009.png" id="3_170vj"]
 [ext_resource type="PackedScene" uid="uid://bikbttvsagmg3" path="res://scenes/weapons/weapon_controller/weapon_controller.tscn" id="6_rafmm"]
@@ -46,7 +45,8 @@ radius = 4.0
 radius = 8.0
 
 [node name="Enemy3" instance=ExtResource("1_v6nm6")]
-icon_particle = ExtResource("2_fqqx6")
+enemy_type = "Weapon"
+icon_particle = ExtResource("2_ajjtk")
 weapon = ExtResource("2_0c4lp")
 
 [node name="AnimatedSprite" parent="Visuais" index="1"]

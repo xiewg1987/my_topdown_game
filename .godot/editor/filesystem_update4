@@ -19,3 +19,6 @@ res://scenes/arena/arena.tscn
 res://theme/tileset/room/level_one_room.tres
 res://scenes/arena/arena.gd
 res://scenes/bullets/bullet_machine_gun/bullet_machine_gun.tscn
+res://components/enemy_spawner/enemy_spawner.gd
+res://scenes/particle/dead_particle/dead_particle.tscn
+res://autoloads/global/global.gd
