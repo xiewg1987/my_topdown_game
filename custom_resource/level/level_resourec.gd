@@ -3,7 +3,7 @@ extends Resource
 
 @export_group("Level Resource") ## 关卡资源
 @export var num_sub_levels := 4 ## 子层级
-@export var num_rooms := 32 ## 房间数量
+@export var num_rooms := 5 ## 房间数量
 
 @export_group("Room Resource") ## 房间数据
 @export var min_enemies_per_room := 5 ## 房间最大敌人
@@ -22,3 +22,12 @@ extends Resource
 @export var props: Array[PackedScene] ## 道具场景
 @export var enemy_scenes: Array[PackedScene] ## 敌人场景
 @export var store_resource: Array[LevelStoreResource] ## 商店资源
+
+func get_random_store_item() -> ItemsResource:
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	var weights: PackedFloat32Array = []
+	for item in store_resource:
+		weights.append(item.item_prob)
+	var index = rng.rand_weighted(weights)
+	return store_resource[index].item_resource

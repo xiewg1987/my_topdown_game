@@ -1,4 +1,4 @@
-class_name StoreItemBase
+class_name StoreItem
 extends Area2D
 
 @export var common_glow: Color
@@ -35,6 +35,7 @@ func setup(data: ItemsResource) -> void:
 
 func buy_item() -> void:
 	if not item_resource: return
+	if Global.conis < item_resource.price: return
 	match item_resource.id:
 		"Potion":
 			Global.player_ref.health_component.heal(item_resource.value)
@@ -42,6 +43,7 @@ func buy_item() -> void:
 			pass
 		"Something":
 			pass
+	Global.conis -= item_resource.price
 	queue_free()
 
 

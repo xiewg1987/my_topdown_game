@@ -1,13 +1,28 @@
 [gd_scene load_steps=10 format=3 uid="uid://cfms4bi4sivvp"]
 
 [ext_resource type="Texture2D" uid="uid://dw8ew530rlfr" path="res://assets/sprites/glow4.png" id="1_n2fiv"]
-[ext_resource type="Script" uid="uid://ooq5ir3wyyfl" path="res://scenes/store_item/store_item_base.gd" id="1_ompb6"]
+[ext_resource type="Script" uid="uid://ooq5ir3wyyfl" path="res://scenes/store_item/store_item.gd" id="1_ompb6"]
 [ext_resource type="Texture2D" uid="uid://0poobuecm0un" path="res://assets/sprites/items/Item_White1.png" id="2_gef1n"]
 [ext_resource type="Texture2D" uid="uid://cnkiu5jecgwsr" path="res://assets/sprites/coin.png" id="3_gef1n"]
 [ext_resource type="FontFile" uid="uid://cmkei0r5t77jr" path="res://assets/font/Lilian.ttf" id="4_3aie4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2fiv"]
 radius = 13.009612
+
+[sub_resource type="Animation" id="Animation_ompb6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Glow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_3aie4"]
 resource_name = "idea"
@@ -25,21 +40,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.283185307179586]
-}
-
-[sub_resource type="Animation" id="Animation_ompb6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Glow:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wm64c"]

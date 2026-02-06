@@ -36,3 +36,7 @@ res://autoloads/event_bus/shop/shop_signal.gd
 res://scenes/room/level_one_room/level_one_room.tscn
 res://scenes/ui/treasure_box/treasure_box.tscn
 res://scenes/ui/treasure_box/treasure_box.gd
+res://scenes/room/room.gd
+res://custom_resource/level/one/level_one.tres
+res://custom_resource/level/level_resourec.gd
+res://scenes/store_item/store_item.gd

@@ -8,6 +8,8 @@ const SPAWN_MARKER = preload("uid://brmmx1ct7w4dh")
 const DEAD_PARTICLE = preload("uid://cyxp6ptyt13ew")
 const Hit_MATERIAL = preload("uid://bj4juvthkrjdh")
 const BLOOD_EFFECT = preload("uid://dgvlwej56mhl6")
+const TREASURE_BOX = preload("uid://ccw60j2l4l7wn")
+const STORE_ITEM_BASE = preload("uid://cfms4bi4sivvp")
 
 ## 配置字典
 var settings: Dictionary = {

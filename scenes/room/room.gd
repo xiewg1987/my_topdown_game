@@ -1,6 +1,9 @@
 class_name LevelRoom
 extends Node2D
 
+@export var item_positions: Array[Marker2D]
+
+
 @onready var tile_data: TileMapLayer = %TileData
 @onready var player_spawn_ponsition: Marker2D = %PlayerSpawnPonsition
 
@@ -35,6 +38,17 @@ func register_tiles() -> void:
 func get_free_spawn_position() -> Vector2:
 	var tile_coord = tiles.pick_random()
 	return tile_data.map_to_local(tile_coord)
+
+
+func setup_room_as_shop(data: LevelResource) -> void:
+	if data.store_resource.is_empty(): return
+	for marker: Marker2D in item_positions:
+		var item_resource: ItemsResource = data.get_random_store_item()
+		var store_item_instance: StoreItem = Global.STORE_ITEM_BASE.instantiate()
+		add_child(store_item_instance)
+		store_item_instance.global_position = marker.global_position
+		store_item_instance.setup(item_resource)
+
 
 func crete_props(level_resource: LevelResource) -> void:
 	var random_props = randi_range(level_resource.min_props_per_room, level_resource.max_props_per_room)

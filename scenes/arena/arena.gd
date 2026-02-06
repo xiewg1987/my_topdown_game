@@ -1,7 +1,6 @@
 class_name Arena
 extends Node2D
 
-
 @export var arena_cursor: Texture2D
 @export var level_resource: LevelResource
 @export var coin_sound: AudioStream
@@ -17,6 +16,7 @@ var player_instance: Player
 var current_room: LevelRoom
 var start_room_coord: Vector2i
 var end_room_coord: Vector2i
+var store_room_coord: Vector2i = Vector2i.MAX
 var grid_cell_size: Vector2i
 var grid: Dictionary[Vector2i, LevelRoom] = {}
 var directions := [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
@@ -59,7 +59,6 @@ func generate_level_layout() -> void:
 		if not grid.has(next_coord):
 			grid[next_coord] = null
 	print("布局已生成：：：--->", grid.keys())
-	create_rooms()
 	select_special_rooms()
 
 
@@ -67,8 +66,13 @@ func generate_level_layout() -> void:
 func create_rooms() -> void:
 	print("开始创建房间...")
 	for room_coord: Vector2i in grid.keys():
+
+			
 		var room_instance: LevelRoom = level_resource.room_scene.instantiate() as LevelRoom
 		add_child(room_instance)
+		if room_coord == store_room_coord:
+			room_instance.is_cleared = true
+			room_instance.setup_room_as_shop(level_resource)
 		room_instance.crete_props(level_resource)
 		room_instance.position = room_coord * grid_cell_size
 		grid[room_coord] = room_instance
@@ -111,6 +115,12 @@ func select_special_rooms() -> void:
 	end_room_coord = find_farthest_room()
 	print("起始房间：：：--->", start_room_coord)
 	print("结束房间：：：--->", end_room_coord)
+	var candidate_coord = grid.keys()
+	candidate_coord.erase(start_room_coord)
+	candidate_coord.erase(end_room_coord)
+	if candidate_coord.is_empty(): return
+	store_room_coord = candidate_coord.pick_random()
+	create_rooms()
 
 
 func find_farthest_room() -> Vector2i:
@@ -158,6 +168,11 @@ func _on_player_room_entered(room: LevelRoom) -> void:
 func _on_room_cleared() -> void:
 	current_room.unlock_room()
 	current_room.is_cleared = true
+	var tile_position = current_room.get_free_spawn_position()
+	var chest_position = current_room.to_global(tile_position)
+	var chest_instance: TreasureBox = Global.TREASURE_BOX.instantiate()
+	call_deferred("add_child", chest_instance)
+	chest_instance.global_position = chest_position
 
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:
