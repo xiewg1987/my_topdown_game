@@ -58,6 +58,9 @@ func generrate_dungeon() -> void:
 	if player_instance:
 		player_instance.queue_free()
 		Global.player_ref = null
+	map_controller.reset()
+	for node: Node in map_controller.get_children():
+		node.queue_free()
 	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	generate_level_layout()
 	# 建议将select_special_rooms放在generate_level_layout内
@@ -212,7 +215,7 @@ func _on_room_cleared() -> void:
 	var tile_position = current_room.get_free_spawn_position()
 	var chest_position = current_room.to_global(tile_position)
 	var chest_instance: TreasureBox = Global.TREASURE_BOX.instantiate()
-	call_deferred("add_child", chest_instance)
+	dungeon.call_deferred("add_child", chest_instance)
 	chest_instance.global_position = chest_position
 
 
