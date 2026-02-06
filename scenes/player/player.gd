@@ -12,8 +12,10 @@ var can_move: bool = true ## 移动判断
 var movement: Vector2 ## 移动
 var direction: Vector2 ## 移动向量
 var coolfown: float
+var current_mana:float
 
 func _ready() -> void:
+	current_mana = player_resource.magic
 	health_component.init_health(player_resource.max_hp)
 	
 
@@ -21,10 +23,11 @@ func _process(delta: float) -> void:
 	weapon_controller.target_position = get_global_mouse_position()
 	weapon_controller.rotate_weapon()
 	coolfown -= delta
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and current_mana > weapon_controller.current_weapon.weapon_resource.mana_cons:
 		if coolfown <= 0:
 			weapon_controller.current_weapon.use_weapon()
 			coolfown = weapon_controller.current_weapon.weapon_resource.cooldown
+			use_mana(weapon_controller.current_weapon.weapon_resource.mana_cons)
 
 
 func _physics_process(_delta: float) -> void:
@@ -47,6 +50,11 @@ func rotate_player() -> void:
 			visuais.scale = Vector2(-1, 1)
 		else :
 			visuais.scale = Vector2(1, 1)
+
+
+func use_mana(value: float) -> void:
+	if current_mana < value: return
+	current_mana -= value
 
 
 func _on_health_component_on_unit_damaged(_amount: float) -> void:

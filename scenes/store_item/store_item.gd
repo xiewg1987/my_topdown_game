@@ -42,6 +42,12 @@ func buy_item() -> void:
 	match item_resource.item_id:
 		"Potion":
 			Global.player_ref.health_component.heal(item_resource.value)
+		"Mana":
+			Global.player_ref.current_mana += item_resource.value
+		"Magic":
+			Global.player_ref.player_resource.magic += item_resource.value
+		"Speed":
+			Global.player_ref.player_resource.move_speed += item_resource.value
 	Global.conis -= item_resource.price
 	queue_free()
 

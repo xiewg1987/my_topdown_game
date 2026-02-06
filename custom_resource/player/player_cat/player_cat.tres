@@ -9,5 +9,6 @@ player_id = "Cat"
 Player_name = "KEY_CAT"
 max_hp = 8.0
 move_speed = 230.0
+magic = 100.0
 icon = ExtResource("1_aji10")
 metadata/_custom_type_script = "uid://blsalc4owo6k2"

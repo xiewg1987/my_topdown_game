@@ -9,5 +9,6 @@ player_id = "Mouse"
 Player_name = "KEY_MOUSE"
 max_hp = 10.0
 move_speed = 210.0
+magic = 100.0
 icon = ExtResource("1_awyqp")
 metadata/_custom_type_script = "uid://blsalc4owo6k2"

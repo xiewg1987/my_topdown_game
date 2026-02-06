@@ -59,3 +59,7 @@ res://scenes/ui/description_panel/discription_panel.tscn
 res://scenes/ui/description_panel/discription_panel.gd
 res://scenes/ui/player/player_card/player_card.gd
 res://scenes/ui/weapon/weapon_card/weapon_card.gd
+res://custom_resource/player/player_resource.gd
+res://custom_resource/player/player_cat/player_cat.tres
+res://custom_resource/player/player_bunny/player_bunny.tres
+res://custom_resource/player/player_mouse/player_mouse.tres

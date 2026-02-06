@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_yobis")
-item_id = "SpeedBoost"
+item_id = "Speed"
 item_name = "KEY_SPEED5"
 value = 5.0
 price = 10.0

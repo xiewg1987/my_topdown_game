@@ -36,6 +36,12 @@ func _ready() -> void:
 	load_game_selection()
 
 
+func _process(_delta: float) -> void:
+	total_coins.text = str(Global.conis)
+	if is_instance_valid(Global.player_ref):
+		mana_bar.value = Global.player_ref.current_mana / Global.player_ref.player_resource.magics
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		current_room.unlock_room()
@@ -150,7 +156,6 @@ func find_coord_from_room(room: LevelRoom) -> Vector2i:
 
 func _on_coin_picked() -> void:
 	SFXPlayer.play(coin_sound)
-	total_coins.text = str(Global.conis)
 	
 
 
