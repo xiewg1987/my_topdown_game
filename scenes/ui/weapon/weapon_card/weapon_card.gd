@@ -19,11 +19,9 @@ func _set_weapon_resource(value: WeaponResource) -> void:
 
 func _on_mouse_entered() -> void:
 	SFXPlayer.play(hover_stream)
-	discription_panel.show()
+	discription_panel.animate_show()
 	DampedOscillator.animate(icon, "scale", randf_range(400, 450), randf_range(5, 10), randf_range(10, 15), 0.5)
-	DampedOscillator.animate(discription_panel, "scale", randf_range(400, 450), randf_range(5, 10), randf_range(10, 15), 0.5)
-	DampedOscillator.animate(discription_panel, "rotation_dogrees", 300, 7.5, 15, 0.5 * randf_range(-20, 20))
-
+	
 
 func _on_mouse_exited() -> void:
 	discription_panel.hide()

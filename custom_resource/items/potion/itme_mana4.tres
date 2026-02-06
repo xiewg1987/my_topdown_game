@@ -11,5 +11,5 @@ value = 4.0
 price = 4.0
 rarity = 1
 icon = ExtResource("1_8xk2p")
-discription = "KEY_POTION4_DESCRIPTION"
+discription = "KEY_MANA4_DESCRIPTION"
 metadata/_custom_type_script = "uid://boop2l6xqphv0"

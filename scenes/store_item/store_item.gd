@@ -9,6 +9,8 @@ extends Area2D
 @onready var glow: Sprite2D = %Glow
 @onready var sprite: Sprite2D = %Sprite
 @onready var price_label: Label = %PriceLabel
+@onready var discription_panel: DiscriptionPanel = %DiscriptionPanel
+
 
 var item_resource: ItemsResource
 var can_buy_item: bool
@@ -31,6 +33,7 @@ func setup(data: ItemsResource) -> void:
 	sprite.texture = item_resource.icon
 	glow.self_modulate = glow_color[item_resource.rarity]
 	price_label.text = str(item_resource.price)
+	discription_panel.text = item_resource.discription
 
 
 func buy_item() -> void:
@@ -39,17 +42,15 @@ func buy_item() -> void:
 	match item_resource.item_id:
 		"Potion":
 			Global.player_ref.health_component.heal(item_resource.value)
-		"Mana":
-			pass
-		"Something":
-			pass
 	Global.conis -= item_resource.price
 	queue_free()
 
 
 func _on_body_entered(_body: Node2D) -> void:
 	can_buy_item = true
+	discription_panel.animate_show()
 
 
 func _on_body_exited(_body: Node2D) -> void:
 	can_buy_item = false
+	discription_panel.hide()

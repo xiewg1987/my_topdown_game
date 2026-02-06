@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfms4bi4sivvp"]
+[gd_scene load_steps=11 format=3 uid="uid://cfms4bi4sivvp"]
 
-[ext_resource type="Texture2D" uid="uid://dw8ew530rlfr" path="res://assets/sprites/glow4.png" id="1_n2fiv"]
-[ext_resource type="Script" uid="uid://ooq5ir3wyyfl" path="res://scenes/store_item/store_item.gd" id="1_ompb6"]
-[ext_resource type="Texture2D" uid="uid://0poobuecm0un" path="res://assets/sprites/items/Item_White1.png" id="2_gef1n"]
-[ext_resource type="Texture2D" uid="uid://cnkiu5jecgwsr" path="res://assets/sprites/coin.png" id="3_gef1n"]
-[ext_resource type="FontFile" uid="uid://cmkei0r5t77jr" path="res://assets/font/Lilian.ttf" id="4_3aie4"]
+[ext_resource type="Script" uid="uid://ooq5ir3wyyfl" path="res://scenes/store_item/store_item.gd" id="1_ywhxm"]
+[ext_resource type="Texture2D" uid="uid://dw8ew530rlfr" path="res://assets/sprites/glow4.png" id="2_u3xd7"]
+[ext_resource type="Texture2D" uid="uid://0poobuecm0un" path="res://assets/sprites/items/Item_White1.png" id="3_ikqqb"]
+[ext_resource type="Texture2D" uid="uid://cnkiu5jecgwsr" path="res://assets/sprites/coin.png" id="4_hkpmw"]
+[ext_resource type="FontFile" uid="uid://cmkei0r5t77jr" path="res://assets/font/Lilian.ttf" id="5_jirni"]
+[ext_resource type="PackedScene" uid="uid://hu88nv8iy1fb" path="res://scenes/ui/description_panel/discription_panel.tscn" id="6_u3xd7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2fiv"]
 radius = 13.009612
@@ -48,10 +49,10 @@ _data = {
 &"idea": SubResource("Animation_3aie4")
 }
 
-[node name="StoreItemBase" type="Area2D"]
+[node name="StoreItem" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_ompb6")
+script = ExtResource("1_ywhxm")
 common_glow = Color(1, 1, 1, 1)
 rare_glow = Color(0.1824424, 0.6011536, 0, 1)
 epic_glow = Color(0.17860496, 0.4101248, 1, 1)
@@ -59,15 +60,23 @@ epic_glow = Color(0.17860496, 0.4101248, 1, 1)
 [node name="Glow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_n2fiv")
+texture = ExtResource("2_u3xd7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_gef1n")
+texture = ExtResource("3_ikqqb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("CircleShape2D_n2fiv")
+
+[node name="DiscriptionPanel" parent="." instance=ExtResource("6_u3xd7")]
+unique_name_in_owner = true
+visible = false
+offset_left = -110.0
+offset_top = -128.0
+offset_right = 110.0
+offset_bottom = -28.0
 
 [node name="Price" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(35, 18)
@@ -80,7 +89,7 @@ theme_override_constants/separation = 2
 [node name="TextureRect" type="TextureRect" parent="Price"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-texture = ExtResource("3_gef1n")
+texture = ExtResource("4_hkpmw")
 expand_mode = 1
 stretch_mode = 5
 
@@ -90,7 +99,7 @@ custom_minimum_size = Vector2(24, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("4_3aie4")
+theme_override_fonts/font = ExtResource("5_jirni")
 theme_override_font_sizes/font_size = 16
 text = "50"
 vertical_alignment = 1

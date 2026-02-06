@@ -10,5 +10,5 @@ item_name = "KEY_POTION2"
 value = 2.0
 price = 2.0
 icon = ExtResource("1_mia8b")
-discription = "KEY_POTION2_DISCROPION"
+discription = "KEY_POTION2_DESCRIPTION"
 metadata/_custom_type_script = "uid://boop2l6xqphv0"

@@ -53,3 +53,9 @@ res://custom_resource/items/potion/itme_speed_boost.tres
 res://custom_resource/items/potion/itme_speed5_boost.tres
 res://custom_resource/items/potion/itme_speed15_boost.tres
 res://scenes/player/player.gd
+res://scenes/store_item/store_item.tscn
+res://custom_resource/items/potion/itme_potion4.tres
+res://scenes/ui/description_panel/discription_panel.tscn
+res://scenes/ui/description_panel/discription_panel.gd
+res://scenes/ui/player/player_card/player_card.gd
+res://scenes/ui/weapon/weapon_card/weapon_card.gd

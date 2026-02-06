@@ -5,6 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://dpegkl2vv52qo" path="res://theme/extra/font/font_16.tres" id="3_gac74"]
 
 [node name="DiscriptionPanel" type="Control"]
+z_index = 5
 custom_minimum_size = Vector2(220, 100)
 layout_mode = 3
 anchors_preset = 15
