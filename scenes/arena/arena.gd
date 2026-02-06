@@ -28,6 +28,7 @@ func _ready() -> void:
 	EventBus.rooms.on_room_cleared.connect(_on_room_cleared)
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.shop.on_coin_picked.connect(_on_coin_picked)
+	EventBus.rooms.on_portal_reached.connect(_on_portal_reached)
 	grid_cell_size = level_resource.room_size + level_resource.corridor_size
 	generate_level_layout()
 	# 建议将select_special_rooms放在generate_level_layout内
@@ -39,7 +40,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	total_coins.text = str(Global.conis)
 	if is_instance_valid(Global.player_ref):
-		mana_bar.value = Global.player_ref.current_mana / Global.player_ref.player_resource.magics
+		mana_bar.value = Global.player_ref.current_mana / Global.player_ref.player_resource.magic
 
 
 func _input(event: InputEvent) -> void:
@@ -79,6 +80,9 @@ func create_rooms() -> void:
 		if room_coord == store_room_coord:
 			room_instance.is_cleared = true
 			room_instance.setup_room_as_shop(level_resource)
+		if room_coord == end_room_coord:
+			room_instance.is_cleared = true
+			room_instance.setup_room_as_protal()
 		room_instance.crete_props(level_resource)
 		room_instance.position = room_coord * grid_cell_size
 		grid[room_coord] = room_instance
@@ -156,7 +160,10 @@ func find_coord_from_room(room: LevelRoom) -> Vector2i:
 
 func _on_coin_picked() -> void:
 	SFXPlayer.play(coin_sound)
-	
+
+
+func _on_portal_reached() -> void:
+	print("到达最后房间")
 
 
 func _on_player_room_entered(room: LevelRoom) -> void:

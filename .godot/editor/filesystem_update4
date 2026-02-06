@@ -63,3 +63,6 @@ res://custom_resource/player/player_resource.gd
 res://custom_resource/player/player_cat/player_cat.tres
 res://custom_resource/player/player_bunny/player_bunny.tres
 res://custom_resource/player/player_mouse/player_mouse.tres
+res://scenes/ui/protal/protal.tscn
+res://scenes/ui/protal/protal.gd
+res://autoloads/event_bus/rooms/rooms_signal.gd

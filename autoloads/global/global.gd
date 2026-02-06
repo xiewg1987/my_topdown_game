@@ -10,6 +10,7 @@ const Hit_MATERIAL = preload("uid://bj4juvthkrjdh")
 const BLOOD_EFFECT = preload("uid://dgvlwej56mhl6")
 const TREASURE_BOX = preload("uid://ccw60j2l4l7wn")
 const STORE_ITEM_BASE = preload("uid://cfms4bi4sivvp")
+const PROTAL = preload("uid://d4f8air3sd4qg")
 
 ## 配置字典
 var settings: Dictionary = {

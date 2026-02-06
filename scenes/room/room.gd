@@ -50,6 +50,11 @@ func setup_room_as_shop(data: LevelResource) -> void:
 		store_item_instance.setup(item_resource)
 
 
+func setup_room_as_protal() -> void:
+	var protal_instance: Protal = Global.PROTAL.instantiate()
+	add_child(protal_instance)
+	protal_instance.global_position = to_global(get_free_spawn_position())
+
 func crete_props(level_resource: LevelResource) -> void:
 	var random_props = randi_range(level_resource.min_props_per_room, level_resource.max_props_per_room)
 	for i in random_props:

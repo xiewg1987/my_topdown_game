@@ -11,3 +11,9 @@ signal on_room_cleared
 
 func emit_on_room_cleared() -> void:
 	on_room_cleared.emit()
+
+
+signal on_portal_reached
+
+func emit_on_portal_reached() -> void:
+	on_portal_reached.emit()

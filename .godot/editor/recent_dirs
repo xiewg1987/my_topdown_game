@@ -1,7 +1,8 @@
+res://assets/sprites
+res://scenes/ui/protal
 res://custom_resource/items/potion
 D:/素材
 res://scenes/ui/treasure_box
-res://assets/sprites
 res://scenes/ui/coin
 res://scenes/store_item
 res://scenes/effect/blood_effect
@@ -19,4 +20,3 @@ res://scenes/props/plant
 res://scenes/room/level_one_room
 res://custom_resource/level/one/
 res://theme/tileset/room
-res://assets/sprites/tiles
