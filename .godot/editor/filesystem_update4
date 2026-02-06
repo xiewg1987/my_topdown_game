@@ -40,3 +40,16 @@ res://scenes/room/room.gd
 res://custom_resource/level/one/level_one.tres
 res://custom_resource/level/level_resourec.gd
 res://scenes/store_item/store_item.gd
+res://language/text.en.translation
+res://language/text.zh.translation
+res://custom_resource/items/potion/itme_potion5.tres
+res://custom_resource/items/potion/itme_potion8.tres
+res://custom_resource/items/potion/itme_mana2.tres
+res://custom_resource/items/potion/itme_mana4.tres
+res://custom_resource/items/potion/itme_mana8.tres
+res://custom_resource/items/potion/itme_magic5.tres
+res://custom_resource/items/potion/itme_magic10.tres
+res://custom_resource/items/potion/itme_speed_boost.tres
+res://custom_resource/items/potion/itme_speed5_boost.tres
+res://custom_resource/items/potion/itme_speed15_boost.tres
+res://scenes/player/player.gd

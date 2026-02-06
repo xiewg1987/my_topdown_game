@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("2_kl3qk")
 item_id = "Potion"
-item_name = "KEY_POTION"
+item_name = "KEY_POTION2"
 value = 2.0
-price = 3.0
+price = 2.0
 icon = ExtResource("1_mia8b")
-discription = "KEY_POTION_DISCROPION"
+discription = "KEY_POTION2_DISCROPION"
 metadata/_custom_type_script = "uid://boop2l6xqphv0"

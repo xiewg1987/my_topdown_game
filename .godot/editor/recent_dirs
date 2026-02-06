@@ -1,9 +1,9 @@
+res://custom_resource/items/potion
 D:/素材
 res://scenes/ui/treasure_box
 res://assets/sprites
 res://scenes/ui/coin
 res://scenes/store_item
-res://custom_resource/items/potion
 res://scenes/effect/blood_effect
 res://assets/sprites/weapons
 res://scenes/bullets/bullet_pistol_enemy
@@ -20,4 +20,3 @@ res://scenes/room/level_one_room
 res://custom_resource/level/one/
 res://theme/tileset/room
 res://assets/sprites/tiles
-res://scenes/room

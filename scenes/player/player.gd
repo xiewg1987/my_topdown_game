@@ -41,11 +41,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		health_component.take_damage(1.0)
-
-
 func rotate_player() -> void:
 	if direction != Vector2.ZERO:
 		if direction == Vector2.LEFT:
@@ -64,4 +59,4 @@ func _on_health_component_on_unit_dead() -> void:
 
 
 func _on_health_component_on_unit_healed(_amount: float) -> void:
-	pass # Replace with function body.
+	EventBus.player.emit_player_health_updated(health_component.current_health, health_component.max_health)

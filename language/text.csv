@@ -27,3 +27,23 @@ KEY_SNIPER_DESCRIPTION,High damage per bullet， but low fire rate.,每发子弹
 KEY_SUBMACHINE_GUN,SUBMACHINE_GUN,冲锋枪
 KEY_SUBMACHINE_GUN_DESCRIPTION,Medium damage per bullet， medium fire rate， medium damage per shot.,中伤害每发子弹，中射击速度，中伤害每发。
 KEY_CHARACTER_SELECTION,CHARACTER_SELECTION,角色选择
+KEY_POTION2,POTION +2,药水 +2
+KEY_POTION2_DESCRIPTION,Recovery health by 2.,恢复2点生命
+KEY_POTION4,POTION +4,药水 +4
+KEY_POTION4_DESCRIPTION,Recovery health by 4.,恢复4点生命
+KEY_POTION8,POTION +8,药水 +8
+KEY_POTION8_DESCRIPTION,Recovery health by 8.,恢复8点生命
+KEY_MANA2,MANA +2,魔法值 +2
+KEY_MANA2_DESCRIPTION,Recovery mana by 2.,恢复2点魔法值
+KEY_MANA4,MANA +4,魔法值 +4
+KEY_MANA4_DESCRIPTION,Recovery mana by 4.,恢复4点魔法值
+KEY_MANA8,MANA +8,魔法值 +8
+KEY_MANA8_DESCRIPTION,Recovery mana by 8.,恢复8点魔法值
+KEY_MAGIC5,MAGIC +5,魔法值 +5
+KEY_MAGIC5_DESCRIPTION,Maximum magic value increased by 5 points.,最大魔法值增加5点
+KEY_MAGIC10,MAGIC +10,魔法值 +10
+KEY_MAGIC10_DESCRIPTION,Maximum magic value increased by 10 points.,最大魔法值增加10点
+KEY_SPEED5,SPEED +5,速度 +5
+KEY_SPEED5_DESCRIPTION,Movement speed increased by 5 points.,移动速度增加5点
+KEY_SPEED15,SPEED +15,速度 +15
+KEY_SPEED15_DESCRIPTION,Movement speed increased by 15 points.,移动速度增加15点

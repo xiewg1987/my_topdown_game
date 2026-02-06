@@ -36,7 +36,7 @@ func setup(data: ItemsResource) -> void:
 func buy_item() -> void:
 	if not item_resource: return
 	if Global.conis < item_resource.price: return
-	match item_resource.id:
+	match item_resource.item_id:
 		"Potion":
 			Global.player_ref.health_component.heal(item_resource.value)
 		"Mana":
