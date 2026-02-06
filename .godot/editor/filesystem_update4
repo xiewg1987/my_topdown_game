@@ -66,3 +66,4 @@ res://custom_resource/player/player_mouse/player_mouse.tres
 res://scenes/ui/protal/protal.tscn
 res://scenes/ui/protal/protal.gd
 res://autoloads/event_bus/rooms/rooms_signal.gd
+res://autoloads/transition/transition.gd

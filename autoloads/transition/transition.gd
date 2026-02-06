@@ -17,3 +17,15 @@ func _on_ransition_to_scene(scene_path: String) -> void:
 	get_tree().change_scene_to_file(scene_path)
 	var tween := create_tween()
 	tween.tween_property(effect.material, "shader_parameter/progress", START_PROGRESS, EFFECT_TWEEN_TIME)
+
+
+func show_transition_in() -> Tween:
+	var tween := create_tween().set_trans(Tween.TRANS_SINE)
+	tween.tween_property(effect.material, "shader_parameter/progress", END_PROGRESS, EFFECT_TWEEN_TIME)
+	return tween
+
+
+func show_transition_out() -> Tween:
+	var tween := create_tween().set_trans(Tween.TRANS_SINE)
+	tween.tween_property(effect.material, "shader_parameter/progress", START_PROGRESS, EFFECT_TWEEN_TIME)
+	return tween

@@ -2,7 +2,7 @@ class_name Arena
 extends Node2D
 
 @export var arena_cursor: Texture2D
-@export var level_resource: LevelResource
+@export var levels: Array[LevelResource]
 @export var coin_sound: AudioStream
 
 
@@ -11,9 +11,14 @@ extends Node2D
 @onready var map_controller: MapController = %MapController
 @onready var enemy_spawner: EnemySpawner = %EnemySpawner
 @onready var total_coins: Label = %TotalCoins
+@onready var dungeon: Node2D = %Dungeon
+
 
 var player_instance: Player
 var current_room: LevelRoom
+var level_resource: LevelResource
+var current_level_index := 0
+var current_sub_level_index := 1
 var start_room_coord: Vector2i
 var end_room_coord: Vector2i
 var store_room_coord: Vector2i = Vector2i.MAX
@@ -29,12 +34,9 @@ func _ready() -> void:
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.shop.on_coin_picked.connect(_on_coin_picked)
 	EventBus.rooms.on_portal_reached.connect(_on_portal_reached)
-	grid_cell_size = level_resource.room_size + level_resource.corridor_size
-	generate_level_layout()
-	# 建议将select_special_rooms放在generate_level_layout内
-	# select_special_rooms需要等待布局完成后执行
-	# 临时注释方便调试
-	load_game_selection()
+	level_resource = levels[current_level_index]
+	generrate_dungeon()
+
 
 
 func _process(_delta: float) -> void:
@@ -47,6 +49,22 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		current_room.unlock_room()
 		current_room.is_cleared = true
+
+
+func generrate_dungeon() -> void:
+	for node: Node2D in dungeon.get_children():
+		node.queue_free()
+	await get_tree().process_frame
+	if player_instance:
+		player_instance.queue_free()
+		Global.player_ref = null
+	grid_cell_size = level_resource.room_size + level_resource.corridor_size
+	generate_level_layout()
+	# 建议将select_special_rooms放在generate_level_layout内
+	# select_special_rooms需要等待布局完成后执行
+	# 临时注释方便调试
+	load_game_selection()
+
 
 func generate_level_layout() -> void:
 	var current_coord := Vector2i.ZERO
@@ -73,10 +91,8 @@ func generate_level_layout() -> void:
 func create_rooms() -> void:
 	print("开始创建房间...")
 	for room_coord: Vector2i in grid.keys():
-
-			
 		var room_instance: LevelRoom = level_resource.room_scene.instantiate() as LevelRoom
-		add_child(room_instance)
+		dungeon.add_child(room_instance)
 		if room_coord == store_room_coord:
 			room_instance.is_cleared = true
 			room_instance.setup_room_as_shop(level_resource)
@@ -111,12 +127,12 @@ func create_corridors() -> void:
 				if direction == Vector2i.RIGHT:
 					corridor = level_resource.h_corridor.instantiate()
 					corridor_position = room_instance.position + Vector2(grid_cell_size.x / 2.0, 0.0)
-					add_child(corridor)
+					dungeon.add_child(corridor)
 					corridor.position = corridor_position
 				elif direction == Vector2i.DOWN:
 					corridor = level_resource.v_corridor.instantiate()
 					corridor_position = room_instance.position + Vector2(0.0, grid_cell_size.y / 2.0)
-					add_child(corridor)
+					dungeon.add_child(corridor)
 					corridor.position = corridor_position
 	print("过道创建完毕...")
 
@@ -163,7 +179,20 @@ func _on_coin_picked() -> void:
 
 
 func _on_portal_reached() -> void:
-	print("到达最后房间")
+	await Transition.show_transition_in().finished
+	if current_sub_level_index < level_resource.num_sub_levels:
+		current_sub_level_index += 1
+		generrate_dungeon()
+	else :
+		current_level_index += 1
+		if current_level_index < levels.size():
+			current_sub_level_index = 1
+			level_resource = levels[current_level_index]
+			generrate_dungeon()
+		else :
+			Transition.transition_to("res://scenes/ui/main_menu/main_menu.tscn")
+			print("没有更多层级！")
+	await Transition.show_transition_out().finished
 
 
 func _on_player_room_entered(room: LevelRoom) -> void:
