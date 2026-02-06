@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cimejvq3aks4b"]
+[gd_scene load_steps=22 format=3 uid="uid://cimejvq3aks4b"]
 
 [ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://assets/sprites/interface/Tilemap/tilemap_packed.png" id="1_1qjuf"]
 [ext_resource type="Script" uid="uid://bgfg0ustgdluf" path="res://scenes/arena/arena.gd" id="1_u52cf"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://djtqrhxpxpjeg" path="res://assets/sprites/interface/bar_mana.png" id="6_jx0ua"]
 [ext_resource type="AudioStream" uid="uid://nlbj37tif8ft" path="res://assets/sounds/coin-d.ogg" id="7_wqbss"]
 [ext_resource type="Script" uid="uid://3edbrkt6kddl" path="res://scenes/arena/map_controller.gd" id="10_2ml6w"]
+[ext_resource type="LabelSettings" uid="uid://d11l46p8hxwne" path="res://theme/extra/font/font_48.tres" id="10_8kk48"]
 [ext_resource type="Script" uid="uid://d176oyvtkbktd" path="res://components/enemy_spawner/enemy_spawner.gd" id="11_xgbxb"]
 [ext_resource type="Texture2D" uid="uid://cnkiu5jecgwsr" path="res://assets/sprites/coin.png" id="12_s83md"]
 [ext_resource type="FontFile" uid="uid://cmkei0r5t77jr" path="res://assets/font/Lilian.ttf" id="13_fv88w"]
@@ -46,6 +47,18 @@ arena = NodePath("..")
 metadata/_custom_type_script = "uid://d176oyvtkbktd"
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="UILayer"]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 8.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "1-1"
+label_settings = ExtResource("10_8kk48")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerUI" type="Control" parent="UILayer"]
 layout_mode = 3

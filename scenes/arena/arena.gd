@@ -12,6 +12,7 @@ extends Node2D
 @onready var enemy_spawner: EnemySpawner = %EnemySpawner
 @onready var total_coins: Label = %TotalCoins
 @onready var dungeon: Node2D = %Dungeon
+@onready var title: Label = %Title
 
 
 var player_instance: Player
@@ -29,6 +30,7 @@ var directions := [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
 
 func _ready() -> void:
 	Cursor.sprite.texture = arena_cursor
+	set_title()
 	EventBus.rooms.on_player_room_entered.connect(_on_player_room_entered)
 	EventBus.rooms.on_room_cleared.connect(_on_room_cleared)
 	EventBus.player.on_player_health_updated.connect(_on_player_health_updated)
@@ -36,7 +38,6 @@ func _ready() -> void:
 	EventBus.rooms.on_portal_reached.connect(_on_portal_reached)
 	level_resource = levels[current_level_index]
 	generrate_dungeon()
-
 
 
 func _process(_delta: float) -> void:
@@ -49,6 +50,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		current_room.unlock_room()
 		current_room.is_cleared = true
+
+func set_title() -> void:
+	title.text = "%s-%s" % [current_level_index + 1, current_sub_level_index]
 
 
 func generrate_dungeon() -> void:
@@ -196,6 +200,7 @@ func _on_portal_reached() -> void:
 			Transition.transition_to("res://scenes/ui/main_menu/main_menu.tscn")
 			print("没有更多层级！")
 	await Transition.show_transition_out().finished
+	set_title()
 
 
 func _on_player_room_entered(room: LevelRoom) -> void:
